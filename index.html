@@ -8,6 +8,7 @@
     
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body { background-color: #ffffff; color: #111111; font-family: 'Playfair Display', serif; }
 
         /* Navbar */
@@ -36,18 +37,18 @@
         .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
         .contact-info h4 { color: #888; text-transform: uppercase; letter-spacing: 4px; font-size: 0.8rem; margin-bottom: 10px; }
         .contact-info p { font-size: 1.4rem; margin-bottom: 30px; }
-        /* Mobil cihazlar için özel ayarlar */
-@media (max-width: 768px) {
-    .navbar { padding: 20px 5%; }
-    .nav-links { gap: 15px; font-size: 0.7rem; }
-    
-    .hero-title { font-size: 3rem; }
-    
-    .content-box { padding: 40px 20px; }
-    h2 { font-size: 2rem; }
-    
-    .contact-grid { grid-template-columns: 1fr; gap: 40px; }
-}
+
+        /* Mobil Cihazlar İçin Responsive Düzenlemeler */
+        @media (max-width: 768px) {
+            .navbar { padding: 20px 5%; flex-direction: column; gap: 15px; }
+            .nav-links { gap: 15px; font-size: 0.7rem; flex-wrap: wrap; justify-content: center; }
+            .hero-title { font-size: 2.5rem; }
+            .hero-subtitle { font-size: 0.9rem; letter-spacing: 4px; }
+            section { padding: 80px 5%; }
+            .content-box { padding: 30px 20px; }
+            h2 { font-size: 2rem; }
+            .contact-grid { grid-template-columns: 1fr; gap: 30px; text-align: center; }
+        }
     </style>
 </head>
 <body>
@@ -93,7 +94,7 @@
     </section>
 
     <section id="contact" class="contact-section">
-        <h2 style="color: #fff; text-align: left; margin-bottom: 80px;">CONTACT US</h2>
+        <h2 style="color: #fff; text-align: center; margin-bottom: 80px;">CONTACT US</h2>
         <div class="contact-grid">
             <div class="contact-info">
                 <h4>Email</h4>
