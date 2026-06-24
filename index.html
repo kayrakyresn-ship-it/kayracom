@@ -16,8 +16,8 @@
         .navbar { display: flex; justify-content: space-between; align-items: center; padding: 30px 8%; background-color: rgba(255, 255, 255, 0.95); border-bottom: 1px solid #f0f0f0; position: fixed; width: 100%; top: 0; z-index: 1000; }
         .logo { font-family: 'Playfair Display', serif; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 4px; }
         .logo span { font-weight: 700; }
-        .nav-links { display: flex; list-style: none; gap: 35px; }
-        .nav-links a { text-decoration: none; color: #555; font-size: 0.8rem; text-transform: uppercase; transition: color 0.3s; }
+        .nav-links { display: flex; list-style: none; gap: 30px; }
+        .nav-links a { text-decoration: none; color: #555; font-size: 0.75rem; text-transform: uppercase; transition: color 0.3s; }
         .nav-links a:hover { color: #111; }
 
         /* Hero */
@@ -28,11 +28,11 @@
         .cta-btn { border: 1px solid #111; color: #111; padding: 14px 40px; text-decoration: none; font-size: 0.85rem; text-transform: uppercase; transition: 0.3s; }
         .cta-btn:hover { background: #111; color: #fff; }
 
-        /* Koleksiyon Bölümü - Yeni Tasarım */
+        /* Koleksiyon */
         .collection-section { padding: 120px 8%; background-color: #050505; color: #ffffff; text-align: center; }
         .collection-header p { color: #aaaaaa; text-transform: uppercase; letter-spacing: 6px; font-size: 0.8rem; margin-bottom: 20px; }
-        .collection-header h2 { font-family: 'Playfair Display', serif; font-size: 3.5rem; font-weight: 300; margin: 0; }
-        .collection-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 80px; }
+        .collection-header h2 { font-family: 'Playfair Display', serif; font-size: 3.5rem; font-weight: 300; margin-bottom: 80px; }
+        .collection-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
         .collection-item { padding: 40px; border: 1px solid #222; }
         .collection-item h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 15px; }
         .collection-item p { color: #888; font-size: 0.9rem; line-height: 1.7; }
@@ -43,7 +43,6 @@
 </head>
 <body>
 
-    <!-- GÜNCELLENMİŞ NAVBAR -->
     <nav class="navbar">
         <div class="logo">Kayra <span>Premium</span></div>
         <ul class="nav-links">
@@ -66,7 +65,6 @@
             <p>KAYRA PREMIUM</p>
             <h2>COLLECTION</h2>
         </div>
-
         <div class="collection-grid">
             <div class="collection-item">
                 <h3>The Nobility of Fabric</h3>
@@ -84,7 +82,13 @@
     </section>
 
     <section id="contact" class="contact-section">
-        <h2>KAYRA PRIVÉ</h2>
+        <h2 id="about">ABOUT US</h2>
+        <p style="margin-bottom: 50px; color: #555;">Kayra Premium, lüks ve zarafeti bir araya getiren vizyoner bir moda anlayışıdır.</p>
+        
+        <h2 id="privacy">PRIVACY & TERMS</h2>
+        <p style="margin-bottom: 50px; color: #555;">Kişisel verileriniz bizimle güvendedir. Tüm haklarımız saklıdır.</p>
+
+        <h2 id="contact">CONTACT</h2>
         <p style="color: #777; margin-bottom: 30px;">kayrakyresn@gmail.com</p>
     </section>
 
