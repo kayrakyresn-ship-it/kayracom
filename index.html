@@ -3,161 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kayra'nın Dünyası</title>
+    <title>Kayra | Premium Minimalist</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+            letter-spacing: 1px;
         }
 
         body {
-            background: #0f172a;
-            background-image: radial-gradient(at 0% 0%, rgba(255, 123, 0, 0.15) 0px, transparent 50%),
-                              radial-gradient(at 100% 100%, rgba(0, 123, 255, 0.15) 0px, transparent 50%);
+            background-color: #ffffff;
+            color: #111111;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            padding: 60px 20px;
         }
 
-        /* Ana Profil Kartı */
-        .card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 40px;
-            border-radius: 20px;
-            text-align: center;
-            max-width: 500px;
-            width: 100%;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-            margin-bottom: 60px;
-        }
-
-        .card h1 {
-            color: #ffffff;
-            font-size: 2.2rem;
-            margin-bottom: 15px;
-        }
-
-        .card p {
-            color: #94a3b8;
-            font-size: 1.1rem;
-            line-height: 1.6;
-            margin-bottom: 25px;
-        }
-
-        .btn {
-            display: inline-block;
-            background: #007bff;
-            color: #ffffff;
-            padding: 12px 30px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
-        }
-
-        /* Hizmetlerimiz Bölümü */
-        .services-container {
-            max-width: 1100px;
-            width: 100%;
-            text-align: center;
-        }
-
-        .section-title {
-            font-size: 2rem;
-            margin-bottom: 40px;
-            background: linear-gradient(45deg, #ff7b00, #ffae00);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            color: #ffae00;
-        }
-
-        .services-grid {
+        /* 1. Üst Menü Çubuğu (Navbar) */
+        .navbar {
             display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 8%;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-bottom: 1px solid #f0f0f0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #111111;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #555555;
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #111111;
+        }
+
+        /* 2. Dev Ana Bölüm (Hero Section) */
+        .hero {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
             justify-content: center;
-            gap: 25px;
-            flex-wrap: wrap;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            margin-top: 80px; /* Navbar yüksekliği kadar boşluk */
+            background: linear-gradient(180deg, #ffffff 0%, #f9f9f9 100%);
         }
 
-        .service-box {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 30px;
-            border-radius: 15px;
-            width: 300px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-            color: #ffffff;
-            text-align: left;
+        .hero-title {
+            font-size: 3.8rem;
+            font-weight: 300;
+            text-transform: uppercase;
+            color: #111111;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            word-spacing: 5px;
         }
 
-        .service-box:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(255, 123, 0, 0.15);
-            border-color: rgba(255, 123, 0, 0.3);
+        /* Tasarıma şıklık katan kalın harf vurgusu */
+        .hero-title span {
+            font-weight: 800;
         }
 
-        .service-box .icon {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-        }
-
-        .service-box h3 {
-            margin-bottom: 10px;
-            color: #ffae00;
-            font-size: 1.3rem;
-        }
-
-        .service-box p {
+        .hero-subtitle {
             font-size: 0.95rem;
-            color: #cbd5e1;
-            line-height: 1.6;
+            color: #777777;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 40px;
+        }
+
+        /* Alt Kırmızı Çizgi Yerine Şık Minimalist Çizgi */
+        .divider {
+            width: 60px;
+            height: 2px;
+            background-color: #111111;
+            margin-bottom: 40px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            border: 1px solid #111111;
+            color: #111111;
+            padding: 14px 40px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            background-color: #111111;
+            color: #ffffff;
         }
     </style>
 </head>
 <body>
 
-    <!-- HTML - Sitenin İçerik Kısmı -->
-    <div class="card">
-        <h1>Merhaba, Ben Kayra! 👋</h1>
-        <p>Web geliştirme dünyasına ilk adımımı attım. Bu benim GitHub Pages üzerinde çalışan ilk harika web sitem!</p>
-        <a href="#" class="btn">Bana Ulaşın</a>
-    </div>
+    <!-- Üst Navigasyon Menüsü -->
+    <nav class="navbar">
+        <div class="logo">AURORA</div>
+        <ul class="nav-links">
+            <li><a href="#">ANASAYFA</a></li>
+            <li><a href="#">HAKKIMIZDA</a></li>
+            <li><a href="#">HİZMETLER</a></li>
+            <li><a href="#">PROJELER</a></li>
+            <li><a href="#">İLETİŞİM</a></li>
+        </ul>
+    </nav>
 
-    <!-- Hizmetlerimiz Bölümü -->
-    <section class="services-container">
-        <h2 class="section-title">Hizmetlerimiz</h2>
-        <div class="services-grid">
-            <div class="service-box">
-                <div class="icon">💻</div>
-                <h3>Web Tasarım</h3>
-                <p>Modern, hızlı ve tüm cihazlarla uyumlu kurumsal web siteleri geliştiriyoruz.</p>
-            </div>
-            <div class="service-box">
-                <div class="icon">🚀</div>
-                <h3>Dijital Pazarlama</h3>
-                <p>Markanızı internet dünyasında öne çıkaracak stratejiler ve çözümler sunuyoruz.</p>
-            </div>
-            <div class="service-box">
-                <div class="icon">📊</div>
-                <h3>SEO Optimizasyonu</h3>
-                <p>Web sitenizin Google aramalarında en üst sıralarda yer almasını sağlıyoruz.</p>
-            </div>
-        </div>
-    </section>
+    <!-- Ana Karşılama Alanı -->
+    <main class="hero">
+        <h1 class="hero-title">BEYOND <span>LIMITS</span></h1>
+        <p class="hero-subtitle">EXCLUSIVE & MINIMALIST EXPERIENCES</p>
+        <div class="divider"></div>
+        <a href="#" class="cta-btn">Keşfedin</a>
+    </main>
 
 </body>
 </html>
