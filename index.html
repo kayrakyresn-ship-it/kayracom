@@ -154,58 +154,90 @@
             color: #ffffff;
         }
 
-        /* 3. Koleksiyon Bölümü Tasarımı */
+        /* 3. Modern & Karanlık Koleksiyon Giriş Alanı (Görsel Tarzı) */
         .collection-section {
-            padding: 120px 8% 60px 8%;
-            background-color: #ffffff;
+            padding: 160px 8%;
+            background-color: #050505; /* Derin lüks siyah */
+            color: #ffffff;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
         .collection-header {
-            text-align: center;
-            margin-bottom: 100px;
+            margin-bottom: 80px;
         }
 
-        .collection-header h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
-            font-weight: 300;
-            letter-spacing: 4px;
-            margin-bottom: 15px;
-            color: #111111;
-        }
-
+        /* Üstteki küçük detay yazısı */
         .collection-header p {
-            font-size: 0.9rem;
-            color: #777777;
+            font-size: 0.8rem;
+            color: #da373d; /* Dikkat çekici lüks kırmızısı */
             text-transform: uppercase;
-            letter-spacing: 3px;
+            letter-spacing: 6px;
+            font-weight: 600;
+            margin-bottom: 20px;
         }
 
+        /* İstediğin devasa büyük ve parıltılı başlık */
+        .collection-header h2 {
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 5rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 12px;
+            color: #ffffff;
+            margin: 0;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.2); 
+        }
+
+        /* Alttaki modern açıklama yazısı */
+        .collection-subtitle {
+            font-size: 1.1rem;
+            color: #aaaaaa;
+            font-weight: 300;
+            letter-spacing: 3px;
+            max-width: 600px;
+            margin-top: 30px;
+            line-height: 1.6;
+        }
+
+        /* Yazı odaklı modern yan yana 3 sütunlu kutular */
         .collection-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 120px;
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            max-width: 1200px;
+            margin-top: 60px;
         }
 
         .collection-item {
-            padding: 20px;
+            background-color: #0f0f0f;
+            padding: 40px 30px;
+            border: 1px solid #1a1a1a;
+            transition: all 0.4s ease;
+        }
+
+        /* Kutunun üzerine gelince parlaması efekti */
+        .collection-item:hover {
+            border-color: #ffffff;
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.05);
         }
 
         .collection-item h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
+            font-size: 1.4rem;
             font-weight: 400;
-            margin-bottom: 20px;
-            letter-spacing: 1px;
+            color: #ffffff;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
         }
 
         .collection-item p {
-            font-size: 0.95rem;
-            color: #444444;
-            line-height: 1.8;
+            font-size: 0.9rem;
+            color: #888888;
+            line-height: 1.7;
             font-weight: 300;
             letter-spacing: 0.5px;
         }
@@ -226,6 +258,7 @@
             font-weight: 300;
             letter-spacing: 6px;
             margin-bottom: 15px;
+            color: #111111;
         }
 
         .contact-subtitle {
@@ -272,16 +305,17 @@
 </head>
 <body>
 
+    <!-- ÜST MENÜ (NAVBAR) -->
     <nav class="navbar">
         <div class="logo">Kayra <span>Premium</span></div>
         <ul class="nav-links">
             <li><a href="#">HOME</a></li>
-            <li><a href="#collection">COLLECTION</a></li>
-            <li><a href="#">ABOUT US</a></li>
+            <li><a href="#collection">ABOUT US</a></li>
             <li><a href="#contact">CONTACT</a></li>
         </ul>
     </nav>
 
+    <!-- ANA GİRİŞ ALANI (HERO SECTION) -->
     <main class="hero">
         <h1 class="hero-title">LUXURY IN ITS <span>PUREST FORM</span></h1>
         <p class="hero-subtitle">KAYRA PREMIUM COLLECTION</p>
@@ -289,15 +323,16 @@
         <a href="#collection" class="cta-btn">Explore Collection</a>
     </main>
 
-    <!-- KOLEKSİYON BÖLÜMÜ (COLLECTION SECTION) -->
+    <!-- MODERN & KARANLIK BÖLÜM (GÖRSELDEKİ TARZDA) -->
     <section id="collection" class="collection-section">
         <div class="collection-header">
-            <h2>TIMELESS LINES, MINIMALIST TOUCHES</h2>
-            <p>Beyond fashion, the purest form of character.</p>
+            <p>AURORA PACIFIC</p>
+            <h2>ABOUT US</h2>
+            <p class="collection-subtitle">Where Luxury Meets Limitless Horizons</p>
         </div>
 
         <div class="collection-grid">
-            <!-- 1. Bölüm -->
+            <!-- 1. Kutu -->
             <div class="collection-item">
                 <div class="item-content">
                     <h3>The Nobility of Fabric</h3>
@@ -305,7 +340,7 @@
                 </div>
             </div>
 
-            <!-- 2. Bölüm -->
+            <!-- 2. Kutu -->
             <div class="collection-item">
                 <div class="item-content">
                     <h3>Flawless Silhouettes</h3>
@@ -313,11 +348,11 @@
                 </div>
             </div>
 
-            <!-- 3. Bölüm -->
+            <!-- 3. Kutu -->
             <div class="collection-item">
                 <div class="item-content">
-                    <h3>Day to Night Timelessness</h3>
-                    <p>Pieces that will hold their place in your wardrobe for a lifetime, not just a single season. The formula for effortless elegance at any moment of the day.</p>
+                    <h3>Timelessness</h3>
+                    <p>Pieces that will hold their place in your wardrobe for a lifetime, not just a single season. The formula for effortless elegance.</p>
                 </div>
             </div>
         </div>
