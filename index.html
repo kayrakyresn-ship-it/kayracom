@@ -5,59 +5,126 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kayra'nın Dünyası</title>
     <style>
-        /* CSS - Sitenin Tasarım Kısmı */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #1e1e2f, #252545);
-            color: #ffffff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
+        body {
+            background: #0f172a;
+            background-image: radial-gradient(at 0% 0%, rgba(255, 123, 0, 0.15) 0px, transparent 50%),
+                              radial-gradient(at 100% 100%, rgba(0, 123, 255, 0.15) 0px, transparent 50%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 60px 20px;
+        }
+
+        /* Ana Profil Kartı */
         .card {
             background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             padding: 40px;
             border-radius: 20px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            max-width: 400px;
+            max-width: 500px;
             width: 100%;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            margin-bottom: 60px;
         }
 
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            background: linear-gradient(45deg, #ff7b00, #ffae00);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .card h1 {
+            color: #ffffff;
+            font-size: 2.2rem;
+            margin-bottom: 15px;
         }
 
-        p {
+        .card p {
+            color: #94a3b8;
             font-size: 1.1rem;
-            color: #ccc;
             line-height: 1.6;
+            margin-bottom: 25px;
         }
 
         .btn {
             display: inline-block;
-            margin-top: 20px;
+            background: #007bff;
+            color: #ffffff;
             padding: 12px 30px;
-            background: linear-gradient(45deg, #007bff, #00d2ff);
-            color: white;
+            border-radius: 30px;
             text-decoration: none;
-            border-radius: 25px;
-            font-weight: bold;
-            transition: transform 0.2s, box-shadow 0.2s;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
+        }
+
+        /* Hizmetlerimiz Bölümü */
+        .services-container {
+            max-width: 1100px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 40px;
+            background: linear-gradient(45deg, #ff7b00, #ffae00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: #ffae00;
+        }
+
+        .services-grid {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .service-box {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 30px;
+            border-radius: 15px;
+            width: 300px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            color: #ffffff;
+            text-align: left;
+        }
+
+        .service-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(255, 123, 0, 0.15);
+            border-color: rgba(255, 123, 0, 0.3);
+        }
+
+        .service-box .icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .service-box h3 {
+            margin-bottom: 10px;
+            color: #ffae00;
+            font-size: 1.3rem;
+        }
+
+        .service-box p {
+            font-size: 0.95rem;
+            color: #cbd5e1;
+            line-height: 1.6;
         }
     </style>
 </head>
@@ -70,5 +137,29 @@
         <a href="#" class="btn">Bana Ulaşın</a>
     </div>
 
+    <!-- Hizmetlerimiz Bölümü -->
+    <section class="services-container">
+        <h2 class="section-title">Hizmetlerimiz</h2>
+        <div class="services-grid">
+            <div class="service-box">
+                <div class="icon">💻</div>
+                <h3>Web Tasarım</h3>
+                <p>Modern, hızlı ve tüm cihazlarla uyumlu kurumsal web siteleri geliştiriyoruz.</p>
+            </div>
+            <div class="service-box">
+                <div class="icon">🚀</div>
+                <h3>Dijital Pazarlama</h3>
+                <p>Markanızı internet dünyasında öne çıkaracak stratejiler ve çözümler sunuyoruz.</p>
+            </div>
+            <div class="service-box">
+                <div class="icon">📊</div>
+                <h3>SEO Optimizasyonu</h3>
+                <p>Web sitenizin Google aramalarında en üst sıralarda yer almasını sağlıyoruz.</p>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
 </body>
 </html>
