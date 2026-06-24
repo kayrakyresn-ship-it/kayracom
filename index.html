@@ -40,7 +40,7 @@
             z-index: 1000;
         }
 
-        /* Lüks Kayra Premium Logosu - Fontu Değiştirildi */
+        /* Lüks Kayra Premium Logosu */
         .logo {
             font-family: 'Playfair Display', serif;
             font-size: 1.2rem;
@@ -95,22 +95,20 @@
 
         /* 2. Dev Ana Bölüm (Hero Section) */
         .hero {
-            flex: 1;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
             padding: 0 20px;
-            margin-top: 80px;
             background: linear-gradient(180deg, #ffffff 0%, #f9f9f9 100%);
         }
 
-        /* "LUXURY IN ITS PUREST FORM" Başlığı - Yeni Premium Font */
         .hero-title {
             font-family: 'Playfair Display', serif;
             font-size: 3.5rem;
-            font-weight: 300; /* İnce ve zarif yapı */
+            font-weight: 300;
             text-transform: uppercase;
             color: #111111;
             line-height: 1.3;
@@ -119,13 +117,11 @@
             letter-spacing: 2px;
         }
 
-        /* İstediğin Kalın ve Vurgulu Kısım (PUREST FORM) */
         .hero-title span {
             font-family: 'Playfair Display', serif;
-            font-weight: 900; /* Ekstra kalın yapı ile tam vurgu */
+            font-weight: 900;
         }
 
-        /* Alt Başlık */
         .hero-subtitle {
             font-size: 0.9rem;
             color: #777777;
@@ -134,7 +130,6 @@
             margin-bottom: 40px;
         }
 
-        /* İnce Şık Çizgi */
         .divider {
             width: 60px;
             height: 2px;
@@ -142,7 +137,6 @@
             margin-bottom: 40px;
         }
 
-        /* Buton */
         .cta-btn {
             display: inline-block;
             border: 1px solid #111111;
@@ -159,28 +153,190 @@
             background-color: #111111;
             color: #ffffff;
         }
+
+        /* 3. Koleksiyon Bölümü Tasarımı */
+        .collection-section {
+            padding: 120px 8% 60px 8%;
+            background-color: #ffffff;
+        }
+
+        .collection-header {
+            text-align: center;
+            margin-bottom: 100px;
+        }
+
+        .collection-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 300;
+            letter-spacing: 4px;
+            margin-bottom: 15px;
+            color: #111111;
+        }
+
+        .collection-header p {
+            font-size: 0.9rem;
+            color: #777777;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .collection-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 120px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .collection-item {
+            padding: 20px;
+        }
+
+        .collection-item h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .collection-item p {
+            font-size: 0.95rem;
+            color: #444444;
+            line-height: 1.8;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+
+        /* 4. En Alttaki İletişim Bölümü */
+        .contact-section {
+            padding: 100px 20px;
+            background-color: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 300;
+            letter-spacing: 6px;
+            margin-bottom: 15px;
+        }
+
+        .contact-subtitle {
+            font-size: 0.85rem;
+            color: #777777;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 40px;
+        }
+
+        .contact-details {
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: #111111;
+            line-height: 2;
+        }
+
+        .contact-details .email {
+            letter-spacing: 2px;
+            font-weight: 500;
+        }
+
+        .contact-details .location {
+            color: #555555;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .contact-details .social-links a {
+            color: #111111;
+            text-decoration: none;
+            transition: opacity 0.3s;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .contact-details .social-links a:hover {
+            opacity: 0.6;
+        }
     </style>
 </head>
 <body>
 
     <nav class="navbar">
-        <!-- Logo alanındaki font da lüks görünüme uyarlandı -->
         <div class="logo">Kayra <span>Premium</span></div>
         <ul class="nav-links">
             <li><a href="#">HOME</a></li>
-            <li><a href="#">COLLECTION</a></li>
+            <li><a href="#collection">COLLECTION</a></li>
             <li><a href="#">ABOUT US</a></li>
-            <li><a href="#">CONTACT</a></li>
+            <li><a href="#contact">CONTACT</a></li>
         </ul>
     </nav>
 
     <main class="hero">
-        <!-- İngilizceye çevrildi, vurgulamak istediğin kalın kısım span içinde korundu -->
         <h1 class="hero-title">LUXURY IN ITS <span>PUREST FORM</span></h1>
         <p class="hero-subtitle">KAYRA PREMIUM COLLECTION</p>
         <div class="divider"></div>
-        <a href="#" class="cta-btn">Explore Collection</a>
+        <a href="#collection" class="cta-btn">Explore Collection</a>
     </main>
+
+    <!-- KOLEKSİYON BÖLÜMÜ (COLLECTION SECTION) -->
+    <section id="collection" class="collection-section">
+        <div class="collection-header">
+            <h2>TIMELESS LINES, MINIMALIST TOUCHES</h2>
+            <p>Beyond fashion, the purest form of character.</p>
+        </div>
+
+        <div class="collection-grid">
+            <!-- 1. Bölüm -->
+            <div class="collection-item">
+                <div class="item-content">
+                    <h3>The Nobility of Fabric</h3>
+                    <p>We do not follow trends; we transform the finest fabrics into pieces of art that meet your skin. Every stitch carries the lasting mark of luxury.</p>
+                </div>
+            </div>
+
+            <!-- 2. Bölüm -->
+            <div class="collection-item">
+                <div class="item-content">
+                    <h3>Flawless Silhouettes</h3>
+                    <p>Stripped of all unnecessary details, focusing solely on the perfection of form and cut. Simple, yet captivating in every room you enter.</p>
+                </div>
+            </div>
+
+            <!-- 3. Bölüm -->
+            <div class="collection-item">
+                <div class="item-content">
+                    <h3>Day to Night Timelessness</h3>
+                    <p>Pieces that will hold their place in your wardrobe for a lifetime, not just a single season. The formula for effortless elegance at any moment of the day.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- İLETİŞİM BÖLÜMÜ (CONTACT SECTION) -->
+    <section id="contact" class="contact-section">
+        <div class="divider"></div>
+        <h2>KAYRA PRIVÉ</h2>
+        <p class="contact-subtitle">Contact us for a personalized experience.</p>
+        
+        <div class="contact-details">
+            <p class="email">prive@kayrapremium.com</p>
+            <p class="location">Nişantaşı, İstanbul</p>
+            <div class="social-links">
+                <a href="#">Instagram</a> / <a href="#">Pinterest</a>
+            </div>
+        </div>
+    </section>
 
 </body>
 </html>
