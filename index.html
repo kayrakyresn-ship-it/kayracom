@@ -7,8 +7,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
     
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        /* 1. Yumuşak kaydırma buraya eklendi */
         html { scroll-behavior: smooth; }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body { background-color: #ffffff; color: #111111; font-family: 'Playfair Display', serif; }
 
         /* Navbar */
@@ -32,13 +34,13 @@
         .content-box h3 { font-size: 2.5rem; margin-bottom: 30px; }
         .content-box p { font-size: 1.3rem; line-height: 1.8; color: #333; max-width: 800px; margin: 0 auto; }
 
-        /* Premium Contact Style */
+        /* Contact Style */
         .contact-section { background-color: #050505; color: #ffffff; padding: 120px 15%; text-align: left; }
         .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
         .contact-info h4 { color: #888; text-transform: uppercase; letter-spacing: 4px; font-size: 0.8rem; margin-bottom: 10px; }
         .contact-info p { font-size: 1.4rem; margin-bottom: 30px; }
 
-        /* Mobil Cihazlar İçin Responsive Düzenlemeler */
+        /* Mobil Responsive */
         @media (max-width: 768px) {
             .navbar { padding: 20px 5%; flex-direction: column; gap: 15px; }
             .nav-links { gap: 15px; font-size: 0.7rem; flex-wrap: wrap; justify-content: center; }
