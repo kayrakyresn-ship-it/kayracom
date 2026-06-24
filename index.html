@@ -28,17 +28,20 @@
         .cta-btn { border: 1px solid #111; color: #111; padding: 14px 40px; text-decoration: none; font-size: 0.85rem; text-transform: uppercase; transition: 0.3s; }
         .cta-btn:hover { background: #111; color: #fff; }
 
-        /* Koleksiyon */
-        .collection-section { padding: 120px 8%; background-color: #050505; color: #ffffff; text-align: center; }
-        .collection-header p { color: #aaaaaa; text-transform: uppercase; letter-spacing: 6px; font-size: 0.8rem; margin-bottom: 20px; }
-        .collection-header h2 { font-family: 'Playfair Display', serif; font-size: 3.5rem; font-weight: 300; margin-bottom: 80px; }
-        .collection-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
-        .collection-item { padding: 40px; border: 1px solid #222; }
-        .collection-item h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 15px; }
-        .collection-item p { color: #888; font-size: 0.9rem; line-height: 1.7; }
+        /* Ortak Bölüm Tasarımı (Kutulu Yapı) */
+        .content-section { padding: 100px 8%; background-color: #050505; color: #ffffff; text-align: center; }
+        .section-header { margin-bottom: 60px; }
+        .section-header p { color: #aaaaaa; text-transform: uppercase; letter-spacing: 6px; font-size: 0.8rem; margin-bottom: 20px; }
+        .section-header h2 { font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 300; }
+        
+        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+        .box-item { padding: 40px; border: 1px solid #222; transition: 0.3s; }
+        .box-item:hover { border-color: #555; }
+        .box-item h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 15px; color: #fff; }
+        .box-item p { color: #888; font-size: 0.9rem; line-height: 1.7; }
 
         /* İletişim */
-        .contact-section { padding: 100px 20px; background-color: #f9f9f9; text-align: center; }
+        .contact-section { padding: 100px 8%; background-color: #f9f9f9; text-align: center; }
     </style>
 </head>
 <body>
@@ -49,7 +52,7 @@
             <li><a href="#">HOME</a></li>
             <li><a href="#collection">COLLECTION</a></li>
             <li><a href="#about">ABOUT US</a></li>
-            <li><a href="#privacy">PRIVACY & TERMS</a></li>
+            <li><a href="#privacy">PRIVACY</a></li>
             <li><a href="#contact">CONTACT</a></li>
         </ul>
     </nav>
@@ -60,36 +63,58 @@
         <a href="#collection" class="cta-btn">Explore Collection</a>
     </main>
 
-    <section id="collection" class="collection-section">
-        <div class="collection-header">
-            <p>KAYRA PREMIUM</p>
+    <section id="collection" class="content-section">
+        <div class="section-header">
+            <p>Kayra Premium</p>
             <h2>COLLECTION</h2>
         </div>
-        <div class="collection-grid">
-            <div class="collection-item">
+        <div class="grid-container">
+            <div class="box-item">
                 <h3>The Nobility of Fabric</h3>
                 <p>We do not follow trends; we transform the finest fabrics into pieces of art that meet your skin.</p>
             </div>
-            <div class="collection-item">
+            <div class="box-item">
                 <h3>Flawless Silhouettes</h3>
                 <p>Stripped of all unnecessary details, focusing solely on the perfection of form and cut.</p>
             </div>
-            <div class="collection-item">
+            <div class="box-item">
                 <h3>Timelessness</h3>
                 <p>Pieces that will hold their place in your wardrobe for a lifetime, not just a single season.</p>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="contact-section">
-        <h2 id="about">ABOUT US</h2>
-        <p style="margin-bottom: 50px; color: #555;">Kayra Premium, lüks ve zarafeti bir araya getiren vizyoner bir moda anlayışıdır.</p>
-        
-        <h2 id="privacy">PRIVACY & TERMS</h2>
-        <p style="margin-bottom: 50px; color: #555;">Kişisel verileriniz bizimle güvendedir. Tüm haklarımız saklıdır.</p>
+    <section id="about" class="content-section" style="background-color: #0a0a0a;">
+        <div class="section-header">
+            <h2>ABOUT US</h2>
+        </div>
+        <div class="grid-container" style="justify-content: center;">
+            <div class="box-item" style="max-width: 600px;">
+                <h3>The Vision of Kayra</h3>
+                <p>Kayra Premium, lüksü bir varış noktası değil, bir yaşam biçimi olarak tanımlar. Zanaatkarlarımız tarafından titizlikle hazırlanan her bir parça, kaliteye ve zamansız estetiğe olan bağlılığımızın bir simgesidir.</p>
+            </div>
+        </div>
+    </section>
 
-        <h2 id="contact">CONTACT</h2>
-        <p style="color: #777; margin-bottom: 30px;">kayrakyresn@gmail.com</p>
+    <section id="privacy" class="content-section">
+        <div class="section-header">
+            <h2>PRIVACY & TERMS</h2>
+        </div>
+        <div class="grid-container">
+            <div class="box-item">
+                <h3>Data Security</h3>
+                <p>Gizliliğiniz bizim için en üst düzeyde önem taşır. Kişisel verileriniz, en son güvenlik protokolleri ile korunmaktadır.</p>
+            </div>
+            <div class="box-item">
+                <h3>Usage Terms</h3>
+                <p>Sitemiz üzerinden yapılan tüm işlemler ve içeriklerin kullanımı Kayra Premium kullanım şartlarına tabidir.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2>CONTACT</h2>
+        <p style="color: #555; margin-top: 20px;">kayrakyresn@gmail.com</p>
     </section>
 
 </body>
