@@ -54,11 +54,31 @@
             font-size: 0.85rem;
             font-weight: 500;
             text-transform: uppercase;
+            position: relative; /* Çizginin konumlanması için şart */
+            padding-bottom: 6px;
             transition: color 0.3s ease;
         }
 
         .nav-links a:hover {
             color: #111111;
+        }
+
+        /* Soldan Sağa Çizgi Animasyonu */
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0); /* Çizgi ilk başta gizli (0 genişlikte) */
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #111111; /* Çizgi rengi siyah */
+            transform-origin: bottom left; /* Animasyonun soldan sağa başlamasını sağlar */
+            transition: transform 0.25s ease-out; /* Pürüzsüz geçiş hızı */
+        }
+
+        .nav-links a:hover::after {
+            transform: scaleX(1); /* Mouse üzerine gelince çizgiyi %100 genişliğe çıkar */
         }
 
         /* 2. Dev Ana Bölüm (Hero Section) */
@@ -70,7 +90,7 @@
             align-items: center;
             text-align: center;
             padding: 0 20px;
-            margin-top: 80px; /* Navbar yüksekliği kadar boşluk */
+            margin-top: 80px;
             background: linear-gradient(180deg, #ffffff 0%, #f9f9f9 100%);
         }
 
@@ -84,7 +104,6 @@
             word-spacing: 5px;
         }
 
-        /* Tasarıma şıklık katan kalın harf vurgusu */
         .hero-title span {
             font-weight: 800;
         }
@@ -97,7 +116,6 @@
             margin-bottom: 40px;
         }
 
-        /* Alt Kırmızı Çizgi Yerine Şık Minimalist Çizgi */
         .divider {
             width: 60px;
             height: 2px;
