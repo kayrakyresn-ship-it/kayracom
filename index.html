@@ -4,50 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kayra Premium | The Purest Form of Luxury</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
     
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; letter-spacing: 1px; }
-        body { background-color: #ffffff; color: #111111; min-height: 100vh; display: flex; flex-direction: column; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #ffffff; color: #111111; font-family: 'Playfair Display', serif; }
 
         /* Navbar */
-        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 30px 8%; background-color: rgba(255, 255, 255, 0.95); border-bottom: 1px solid #f0f0f0; position: fixed; width: 100%; top: 0; z-index: 1000; }
-        .logo { font-family: 'Playfair Display', serif; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 4px; }
-        .logo span { font-weight: 700; }
-        .nav-links { display: flex; list-style: none; gap: 30px; }
-        .nav-links a { text-decoration: none; color: #555; font-size: 0.75rem; text-transform: uppercase; transition: color 0.3s; }
-        .nav-links a:hover { color: #111; }
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 40px 8%; position: fixed; width: 100%; z-index: 1000; background: #fff; }
+        .logo { font-size: 1.5rem; text-transform: uppercase; letter-spacing: 6px; }
+        .nav-links { display: flex; list-style: none; gap: 40px; }
+        .nav-links a { text-decoration: none; color: #111; font-size: 0.9rem; font-weight: 700; text-transform: uppercase; position: relative; padding-bottom: 5px; }
+        .nav-links a::after { content: ''; position: absolute; width: 100%; transform: scaleX(0); height: 2px; bottom: 0; left: 0; background-color: #111; transition: transform 0.3s ease; }
+        .nav-links a:hover::after { transform: scaleX(1); }
 
         /* Hero */
-        .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: #fff; }
-        .hero-title { font-family: 'Playfair Display', serif; font-size: 3.5rem; font-weight: 300; text-transform: uppercase; margin-bottom: 25px; }
-        .hero-title span { font-weight: 900; }
-        .hero-subtitle { font-size: 0.9rem; color: #777; text-transform: uppercase; letter-spacing: 5px; margin-bottom: 40px; }
-        .cta-btn { border: 1px solid #111; color: #111; padding: 14px 40px; text-decoration: none; font-size: 0.85rem; text-transform: uppercase; transition: 0.3s; }
-        .cta-btn:hover { background: #111; color: #fff; }
+        .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+        .hero-title { font-size: 5rem; font-weight: 900; text-transform: uppercase; margin-bottom: 20px; }
+        .hero-subtitle { font-size: 1.2rem; letter-spacing: 8px; text-transform: uppercase; color: #555; margin-bottom: 50px; }
 
-        /* Ortak Bölüm Tasarımı (Kutulu Yapı) */
-        .content-section { padding: 100px 8%; background-color: #050505; color: #ffffff; text-align: center; }
-        .section-header { margin-bottom: 60px; }
-        .section-header p { color: #aaaaaa; text-transform: uppercase; letter-spacing: 6px; font-size: 0.8rem; margin-bottom: 20px; }
-        .section-header h2 { font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 300; }
-        
-        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
-        .box-item { padding: 40px; border: 1px solid #222; transition: 0.3s; }
-        .box-item:hover { border-color: #555; }
-        .box-item h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 15px; color: #fff; }
-        .box-item p { color: #888; font-size: 0.9rem; line-height: 1.7; }
+        /* Content Sections - White & Big Typography */
+        section { padding: 150px 15%; text-align: center; background-color: #ffffff; }
+        h2 { font-size: 3.5rem; font-weight: 900; margin-bottom: 60px; text-transform: uppercase; }
+        .content-box { border: 2px solid #111; padding: 80px; transition: 0.5s; }
+        .content-box h3 { font-size: 2.5rem; margin-bottom: 30px; }
+        .content-box p { font-size: 1.3rem; line-height: 1.8; color: #333; max-width: 800px; margin: 0 auto; }
 
-        /* İletişim */
-        .contact-section { padding: 100px 8%; background-color: #f9f9f9; text-align: center; }
+        /* Footer / Contact */
+        .contact-section { background-color: #f4f4f4; padding: 80px; font-size: 1.2rem; }
     </style>
 </head>
 <body>
 
     <nav class="navbar">
-        <div class="logo">Kayra <span>Premium</span></div>
+        <div class="logo">KAYRA <b>PREMIUM</b></div>
         <ul class="nav-links">
             <li><a href="#">HOME</a></li>
             <li><a href="#collection">COLLECTION</a></li>
@@ -58,63 +48,37 @@
     </nav>
 
     <main class="hero">
-        <h1 class="hero-title">LUXURY IN ITS <span>PUREST FORM</span></h1>
-        <p class="hero-subtitle">KAYRA PREMIUM COLLECTION</p>
-        <a href="#collection" class="cta-btn">Explore Collection</a>
+        <h1 class="hero-title">PURE LUXURY</h1>
+        <p class="hero-subtitle">THE ART OF PERFECTION</p>
     </main>
 
-    <section id="collection" class="content-section">
-        <div class="section-header">
-            <p>Kayra Premium</p>
-            <h2>COLLECTION</h2>
-        </div>
-        <div class="grid-container">
-            <div class="box-item">
-                <h3>The Nobility of Fabric</h3>
-                <p>We do not follow trends; we transform the finest fabrics into pieces of art that meet your skin.</p>
-            </div>
-            <div class="box-item">
-                <h3>Flawless Silhouettes</h3>
-                <p>Stripped of all unnecessary details, focusing solely on the perfection of form and cut.</p>
-            </div>
-            <div class="box-item">
-                <h3>Timelessness</h3>
-                <p>Pieces that will hold their place in your wardrobe for a lifetime, not just a single season.</p>
-            </div>
+    <section id="collection">
+        <h2>COLLECTION</h2>
+        <div class="content-box">
+            <h3>Excellence in Every Thread</h3>
+            <p>We transform the finest raw materials into artistic expressions. Each piece is a testament to our dedication to form, cut, and the silent language of luxury.</p>
         </div>
     </section>
 
-    <section id="about" class="content-section" style="background-color: #0a0a0a;">
-        <div class="section-header">
-            <h2>ABOUT US</h2>
-        </div>
-        <div class="grid-container" style="justify-content: center;">
-            <div class="box-item" style="max-width: 600px;">
-                <h3>The Vision of Kayra</h3>
-                <p>Kayra Premium, lüksü bir varış noktası değil, bir yaşam biçimi olarak tanımlar. Zanaatkarlarımız tarafından titizlikle hazırlanan her bir parça, kaliteye ve zamansız estetiğe olan bağlılığımızın bir simgesidir.</p>
-            </div>
+    <section id="about">
+        <h2>ABOUT US</h2>
+        <div class="content-box">
+            <h3>A Vision Defined</h3>
+            <p>Kayra Premium represents more than fashion; it represents a lifestyle. Our journey is rooted in timeless elegance, where every detail is meticulously considered to serve the wearer's individuality.</p>
         </div>
     </section>
 
-    <section id="privacy" class="content-section">
-        <div class="section-header">
-            <h2>PRIVACY & TERMS</h2>
-        </div>
-        <div class="grid-container">
-            <div class="box-item">
-                <h3>Data Security</h3>
-                <p>Gizliliğiniz bizim için en üst düzeyde önem taşır. Kişisel verileriniz, en son güvenlik protokolleri ile korunmaktadır.</p>
-            </div>
-            <div class="box-item">
-                <h3>Usage Terms</h3>
-                <p>Sitemiz üzerinden yapılan tüm işlemler ve içeriklerin kullanımı Kayra Premium kullanım şartlarına tabidir.</p>
-            </div>
+    <section id="privacy">
+        <h2>PRIVACY & TERMS</h2>
+        <div class="content-box">
+            <h3>Your Trust, Our Priority</h3>
+            <p>We handle your data with the same integrity we bring to our craft. All interactions and transactions are strictly governed by our commitment to transparency and digital security.</p>
         </div>
     </section>
 
     <section id="contact" class="contact-section">
         <h2>CONTACT</h2>
-        <p style="color: #555; margin-top: 20px;">kayrakyresn@gmail.com</p>
+        <p>For inquiries: <b>kayrakyresn@gmail.com</b></p>
     </section>
 
 </body>
