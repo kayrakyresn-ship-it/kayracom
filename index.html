@@ -14,56 +14,29 @@
         .navbar { display: flex; justify-content: space-between; align-items: center; padding: 40px 8%; position: fixed; width: 100%; z-index: 1000; background: #fff; }
         .logo { font-size: 1.5rem; text-transform: uppercase; letter-spacing: 6px; }
         .nav-links { display: flex; list-style: none; gap: 40px; }
-        /* Menü linkleri için temel stil */
-.nav-links a {
-    text-decoration: none;
-    color: #111;
-    font-size: 0.9rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    position: relative; /* Çizginin bu elemana göre konumlanması için şart */
-    padding-bottom: 5px; /* Çizgi ile yazı arasında boşluk bırakır */
-    transition: color 0.3s;
-}
-
-/* Çizginin başlangıç hali (görünmez) */
-.nav-links a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%; /* Ortadan başlaması için */
-    width: 0; /* Başlangıçta genişlik 0 */
-    height: 2px;
-    background-color: #111; /* Siyah çizgi */
-    transition: all 0.3s ease-out; /* Akıcı olması için */
-    transform: translateX(-50%); /* Ortaya tam hizalamak için */
-}
-
-/* Mouse ile üzerine gelince (hover) */
-.nav-links a:hover::after {
-    width: 100%; /* Çizgi kelime genişliğine ulaşır */
-}
+        .nav-links a { text-decoration: none; color: #111; font-size: 0.9rem; font-weight: 700; text-transform: uppercase; position: relative; padding-bottom: 5px; }
+        .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 50%; width: 0; height: 2px; background-color: #111; transition: all 0.3s ease-out; transform: translateX(-50%); }
+        .nav-links a:hover::after { width: 100%; }
 
         /* Hero */
         .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
         .hero-title { font-size: 5rem; font-weight: 900; text-transform: uppercase; }
         .hero-subtitle { font-size: 1.2rem; letter-spacing: 8px; color: #555; margin-top: 20px; }
 
-        /* Stats Section */
+        /* Stats */
         .stats-section { display: flex; justify-content: space-around; padding: 100px 15%; background: #050505; color: #fff; text-align: center; }
         .stat-item h3 { font-size: 3.5rem; font-weight: 900; }
         .stat-item p { font-size: 1rem; color: #ccc; margin-top: 10px; }
 
-        /* Sections */
-        section { padding: 150px 15%; text-align: center; }
+        /* Contact Section (Black Background) */
+        .contact-section { background: #000; color: #fff; padding: 100px 15%; text-align: center; }
+        .contact-section h2 { color: #fff; margin-bottom: 30px; }
+        .contact-info { font-size: 1.2rem; line-height: 2; margin-top: 20px; }
+
+        /* General Sections */
+        section { padding: 100px 15%; text-align: center; }
         h2 { font-size: 3.5rem; font-weight: 900; margin-bottom: 60px; text-transform: uppercase; }
         .content-box { border: 2px solid #111; padding: 80px; }
-        
-        @media (max-width: 768px) {
-            .navbar { padding: 20px 5%; }
-            .nav-links { gap: 10px; font-size: 0.6rem; }
-            .stats-section { flex-direction: column; gap: 50px; }
-        }
     </style>
 </head>
 <body id="home">
@@ -74,7 +47,6 @@
             <li><a href="#home">HOME</a></li>
             <li><a href="#collection">COLLECTION</a></li>
             <li><a href="#about">ABOUT</a></li>
-            <li><a href="#stats">STATS</a></li>
             <li><a href="#privacy">PRIVACY</a></li>
             <li><a href="#contact">CONTACT</a></li>
         </ul>
@@ -95,6 +67,11 @@
         <div class="content-box"><h3>A Vision Defined</h3><p>Kayra Premium represents a lifestyle.</p></div>
     </section>
 
+    <section id="privacy">
+        <h2>PRIVACY</h2>
+        <div class="content-box"><h3>Your Trust</h3><p>Your data is our priority.</p></div>
+    </section>
+
     <section id="stats" class="stats-section">
         <div class="stat-item">
             <h3 class="counter" data-target="100">0%</h3>
@@ -110,14 +87,13 @@
         </div>
     </section>
 
-    <section id="privacy">
-        <h2>PRIVACY</h2>
-        <div class="content-box"><h3>Your Trust</h3><p>Your data is our priority.</p></div>
-    </section>
-
-    <section id="contact">
+    <section id="contact" class="contact-section">
         <h2>CONTACT</h2>
-        <div class="content-box"><h3>Let's Talk</h3><p>kayrakyresn@gmail.com</p></div>
+        <div class="contact-info">
+            <p>Email: kayrakyresn@gmail.com</p>
+            <p>Telefon: +90 507 761 38 38</p>
+            <p>Konum: İstanbul, Eyüp</p>
+        </div>
     </section>
 
     <script>
