@@ -10,15 +10,13 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { background-color: #ffffff; color: #111111; font-family: 'Playfair Display', serif; }
 
-        /* Navbar */
+        /* Navbar (Değişmedi) */
         .navbar { display: flex; justify-content: space-between; align-items: center; padding: 40px 8%; position: fixed; width: 100%; z-index: 1000; background: #fff; }
         .logo { font-size: 1.5rem; text-transform: uppercase; letter-spacing: 6px; }
         .nav-links { display: flex; list-style: none; gap: 40px; }
         .nav-links a { text-decoration: none; color: #111; font-size: 0.9rem; font-weight: 700; text-transform: uppercase; position: relative; padding-bottom: 5px; }
         .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 50%; width: 0; height: 2px; background-color: #111; transition: all 0.3s ease-out; transform: translateX(-50%); }
         .nav-links a:hover::after { width: 100%; }
-
-        /* Mobile Menu Toggle (Başlangıçta gizli) */
         .menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; }
 
         /* Hero */
@@ -26,28 +24,28 @@
         .hero-title { font-size: 5rem; font-weight: 900; text-transform: uppercase; }
         .hero-subtitle { font-size: 1.2rem; letter-spacing: 8px; color: #555; margin-top: 20px; }
 
-        /* Stats */
+        /* Content Sections (Fontlar güçlendirildi) */
+        section { padding: 100px 10%; text-align: center; }
+        
+        /* İstediğin gibi Başlıklar Büyütüldü ve Kalınlaştırıldı */
+        h2 { font-size: 4.5rem; font-weight: 900; margin-bottom: 30px; text-transform: uppercase; color: #000; }
+        
+        .content-box { max-width: 800px; margin: 0 auto; line-height: 1.6; }
+        .content-box h3 { font-size: 1.5rem; margin-bottom: 15px; font-weight: 700; }
+        .content-box p { font-size: 1.2rem; color: #333; font-weight: 400; }
+
+        /* Stats & Contact (Aynı kaldı) */
         .stats-section { display: flex; justify-content: space-around; padding: 100px 15%; background: #050505; color: #fff; text-align: center; }
         .stat-item h3 { font-size: 3.5rem; font-weight: 900; }
         .stat-item p { font-size: 1rem; color: #ccc; margin-top: 10px; }
-
-        /* Sections */
-        section { padding: 100px 10%; text-align: center; }
-        h2 { font-size: 3rem; font-weight: 900; margin-bottom: 40px; text-transform: uppercase; }
-        .content-box { border: 2px solid #111; padding: 50px; max-width: 800px; margin: 0 auto; line-height: 1.6; }
-
-        /* Contact */
         .contact-section { background: #000; color: #fff; padding: 80px 10%; text-align: center; }
         .contact-info { font-size: 1rem; line-height: 2; margin-top: 20px; }
 
-        /* Mobil Uyumlu Tasarım */
         @media (max-width: 768px) {
             .nav-links { display: none; flex-direction: column; position: absolute; top: 100px; left: 0; width: 100%; background: #fff; text-align: center; gap: 20px; padding: 20px; }
             .nav-links.active { display: flex; }
             .menu-toggle { display: block; }
-            .hero-title { font-size: 3rem; }
-            .stats-section { flex-direction: column; gap: 40px; padding: 50px 5%; }
-            .content-box { padding: 30px; }
+            h2 { font-size: 2.5rem; }
         }
     </style>
 </head>
@@ -122,7 +120,6 @@
         function toggleMenu() {
             document.getElementById("navLinks").classList.toggle("active");
         }
-
         const counters = document.querySelectorAll('.counter');
         let animated = false;
         window.addEventListener('scroll', () => {
