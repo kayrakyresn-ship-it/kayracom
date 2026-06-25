@@ -4,59 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kayra Premium | The Purest Form of Luxury</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
     <style>
         html { scroll-behavior: smooth; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background-color: #ffffff; color: #111111; font-family: 'Playfair Display', serif; }
+        body { background-color: #ffffff; color: #1a1a1a; font-family: 'Montserrat', sans-serif; }
 
         /* Navbar */
-        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 40px 8%; position: fixed; width: 100%; z-index: 1000; background: #fff; }
-        .logo { font-size: 1.5rem; text-transform: uppercase; letter-spacing: 6px; }
-        .nav-links { display: flex; list-style: none; gap: 40px; }
-        .nav-links a { text-decoration: none; color: #111; font-size: 0.9rem; font-weight: 700; text-transform: uppercase; position: relative; padding-bottom: 5px; }
-        .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 50%; width: 0; height: 2px; background-color: #111; transition: all 0.3s ease-out; transform: translateX(-50%); }
-        .nav-links a:hover::after { width: 100%; }
-
-        /* Mobile Menu Toggle (Başlangıçta gizli) */
-        .menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; }
+        .navbar { display: flex; flex-direction: column; align-items: center; padding: 40px; background: #fff; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; letter-spacing: 8px; margin-bottom: 25px; text-transform: uppercase; }
+        .nav-links { display: flex; list-style: none; gap: 30px; }
+        .nav-links a { text-decoration: none; color: #555; font-size: 0.8rem; letter-spacing: 2px; font-weight: 400; text-transform: uppercase; transition: color 0.3s; }
+        .nav-links a:hover { color: #000; }
 
         /* Hero */
-        .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
-        .hero-title { font-size: 5rem; font-weight: 900; text-transform: uppercase; }
-        .hero-subtitle { font-size: 1.2rem; letter-spacing: 8px; color: #555; margin-top: 20px; }
+        .hero { min-height: 70vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+        .hero-title { font-family: 'Playfair Display', serif; font-size: 4.5rem; font-weight: 400; margin-bottom: 15px; }
+        .hero-subtitle { font-size: 0.9rem; letter-spacing: 6px; color: #888; text-transform: uppercase; }
 
-        /* Stats */
-        .stats-section { display: flex; justify-content: space-around; padding: 100px 15%; background: #050505; color: #fff; text-align: center; }
-        .stat-item h3 { font-size: 3.5rem; font-weight: 900; }
-        .stat-item p { font-size: 1rem; color: #ccc; margin-top: 10px; }
-
-        /* Sections */
+        /* Sections (Çerçevesiz ve Şık) */
         section { padding: 100px 10%; text-align: center; }
-        h2 { font-size: 3rem; font-weight: 900; margin-bottom: 40px; text-transform: uppercase; }
-        .content-box { border: 2px solid #111; padding: 50px; max-width: 800px; margin: 0 auto; line-height: 1.6; }
+        h2 { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 400; margin-bottom: 40px; letter-spacing: 4px; color: #111; }
+        .content-box { max-width: 700px; margin: 0 auto; line-height: 1.8; font-size: 1rem; color: #444; font-weight: 300; }
+        
+        /* Stats */
+        .stats-section { display: flex; justify-content: space-around; padding: 80px 10%; background: #f9f9f9; text-align: center; }
+        .stat-item h3 { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: #000; }
+        .stat-item p { font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; margin-top: 10px; color: #777; }
 
         /* Contact */
         .contact-section { background: #000; color: #fff; padding: 80px 10%; text-align: center; }
-        .contact-info { font-size: 1rem; line-height: 2; margin-top: 20px; }
+        .contact-info { font-size: 0.9rem; line-height: 2; margin-top: 20px; font-weight: 300; }
 
-        /* Mobil Uyumlu Tasarım */
         @media (max-width: 768px) {
-            .nav-links { display: none; flex-direction: column; position: absolute; top: 100px; left: 0; width: 100%; background: #fff; text-align: center; gap: 20px; padding: 20px; }
-            .nav-links.active { display: flex; }
-            .menu-toggle { display: block; }
-            .hero-title { font-size: 3rem; }
-            .stats-section { flex-direction: column; gap: 40px; padding: 50px 5%; }
-            .content-box { padding: 30px; }
+            .nav-links { gap: 15px; }
+            .hero-title { font-size: 2.5rem; }
         }
     </style>
 </head>
 <body id="home">
 
     <nav class="navbar">
-        <div class="logo">KAYRA <span>PREMIUM</span></div>
-        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-        <ul class="nav-links" id="navLinks">
+        <div class="logo">KAYRA</div>
+        <ul class="nav-links">
             <li><a href="#home">HOME</a></li>
             <li><a href="#collection">COLLECTION</a></li>
             <li><a href="#about">ABOUT</a></li>
@@ -66,31 +56,28 @@
     </nav>
 
     <main class="hero">
-        <h1 class="hero-title">PURE LUXURY</h1>
-        <p class="hero-subtitle">THE ART OF PERFECTION</p>
+        <h1 class="hero-title">Pure Luxury</h1>
+        <p class="hero-subtitle">The Art of Perfection</p>
     </main>
 
     <section id="collection">
         <h2>COLLECTION</h2>
         <div class="content-box">
-            <h3>Excellence in Every Thread</h3>
-            <p>Kayra Premium Collection is a reflection of our timeless aesthetic understanding. Each of our pieces has been brought to life by the perfect union of traditional craftsmanship and modern design.</p>
+            <p>Kayra Premium Collection is a reflection of our timeless aesthetic understanding. Each of our pieces has been brought to life by the perfect union of traditional craftsmanship and modern design. Every touch in our collection is not just an aesthetic concern, but a work of art.</p>
         </div>
     </section>
 
     <section id="about">
         <h2>ABOUT US</h2>
         <div class="content-box">
-            <h3>A Vision Defined</h3>
-            <p>Kayra Premium is a visionary entity that defines luxury not just as a means of consumption, but as a stance. We work with a passionate family that is devoted to aesthetics, quality, and sustainability.</p>
+            <p>Kayra Premium is a visionary entity that defines luxury not just as a means of consumption, but as a stance. We work with a passionate family that is devoted to aesthetics, quality, and sustainability. With our global vision, we bring our borderless aesthetic understanding to an ever-expanding audience.</p>
         </div>
     </section>
 
     <section id="privacy">
         <h2>PRIVACY</h2>
         <div class="content-box">
-            <h3>Your Trust</h3>
-            <p>At Kayra Premium, unconditional trust lies at the core of the relationship we build with our customers. Your privacy is our utmost priority. Your data security is our responsibility.</p>
+            <p>At Kayra Premium, unconditional trust lies at the core of the relationship we build with our customers. Your privacy is our utmost priority. Your data security is treated with the same meticulous care we demonstrate in the craftsmanship of our products.</p>
         </div>
     </section>
 
@@ -110,7 +97,7 @@
     </section>
 
     <section id="contact" class="contact-section">
-        <h2>CONTACT</h2>
+        <h2 style="color: #fff;">CONTACT</h2>
         <div class="contact-info">
             <p>Email: kayrakyresn@gmail.com</p>
             <p>Phone: +90 507 761 38 38</p>
@@ -119,10 +106,6 @@
     </section>
 
     <script>
-        function toggleMenu() {
-            document.getElementById("navLinks").classList.toggle("active");
-        }
-
         const counters = document.querySelectorAll('.counter');
         let animated = false;
         window.addEventListener('scroll', () => {
