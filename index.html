@@ -14,7 +14,35 @@
         .navbar { display: flex; justify-content: space-between; align-items: center; padding: 40px 8%; position: fixed; width: 100%; z-index: 1000; background: #fff; }
         .logo { font-size: 1.5rem; text-transform: uppercase; letter-spacing: 6px; }
         .nav-links { display: flex; list-style: none; gap: 40px; }
-        .nav-links a { text-decoration: none; color: #111; font-size: 0.9rem; font-weight: 700; text-transform: uppercase; }
+        /* Menü linkleri için temel stil */
+.nav-links a {
+    text-decoration: none;
+    color: #111;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    position: relative; /* Çizginin bu elemana göre konumlanması için şart */
+    padding-bottom: 5px; /* Çizgi ile yazı arasında boşluk bırakır */
+    transition: color 0.3s;
+}
+
+/* Çizginin başlangıç hali (görünmez) */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%; /* Ortadan başlaması için */
+    width: 0; /* Başlangıçta genişlik 0 */
+    height: 2px;
+    background-color: #111; /* Siyah çizgi */
+    transition: all 0.3s ease-out; /* Akıcı olması için */
+    transform: translateX(-50%); /* Ortaya tam hizalamak için */
+}
+
+/* Mouse ile üzerine gelince (hover) */
+.nav-links a:hover::after {
+    width: 100%; /* Çizgi kelime genişliğine ulaşır */
+}
 
         /* Hero */
         .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
