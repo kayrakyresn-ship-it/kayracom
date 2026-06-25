@@ -10,7 +10,6 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { background-color: #ffffff; color: #111111; font-family: 'Playfair Display', serif; }
 
-        /* Navbar (Değişmedi) */
         .navbar { display: flex; justify-content: space-between; align-items: center; padding: 40px 8%; position: fixed; width: 100%; z-index: 1000; background: #fff; }
         .logo { font-size: 1.5rem; text-transform: uppercase; letter-spacing: 6px; }
         .nav-links { display: flex; list-style: none; gap: 40px; }
@@ -19,27 +18,24 @@
         .nav-links a:hover::after { width: 100%; }
         .menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; }
 
-        /* Hero */
         .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
         .hero-title { font-size: 5rem; font-weight: 900; text-transform: uppercase; }
         .hero-subtitle { font-size: 1.2rem; letter-spacing: 8px; color: #555; margin-top: 20px; }
 
-        /* Content Sections */
         section { padding: 100px 10%; text-align: center; }
-        
-        /* Başlıklar */
+
         h2 { font-size: 4.5rem; font-weight: 900; margin-bottom: 30px; text-transform: uppercase; color: #000; }
-        
-        /* Metinler (Kalınlaştırıldı ve Büyütüldü) */
+
         .content-box { max-width: 800px; margin: 0 auto; line-height: 1.6; }
         .content-box h3 { font-size: 1.8rem; margin-bottom: 15px; font-weight: 800; color: #000; }
         .content-box p { font-size: 1.4rem; color: #111; font-weight: 600; }
 
-        /* Stats & Contact (Aynı kaldı) */
         .stats-section { display: flex; justify-content: space-around; padding: 100px 15%; background: #050505; color: #fff; text-align: center; }
         .stat-item h3 { font-size: 3.5rem; font-weight: 900; }
         .stat-item p { font-size: 1rem; color: #ccc; margin-top: 10px; }
+
         .contact-section { background: #000; color: #ffffff; padding: 80px 10%; text-align: center; }
+        .contact-section h2 { color: #ffffff; }
         .contact-info { font-size: 1rem; line-height: 2; margin-top: 20px; }
 
         @media (max-width: 768px) {
@@ -122,19 +118,25 @@
         function toggleMenu() {
             document.getElementById("navLinks").classList.toggle("active");
         }
+
         const counters = document.querySelectorAll('.counter');
         let animated = false;
+
         window.addEventListener('scroll', () => {
             const statsSection = document.getElementById('stats');
+
             if (statsSection.getBoundingClientRect().top < window.innerHeight && !animated) {
                 animated = true;
+
                 counters.forEach(counter => {
                     const target = +counter.getAttribute('data-target');
                     const isPercent = counter.getAttribute('data-target') === '100' || counter.getAttribute('data-target') === '99';
                     let count = 0;
+
                     const update = setInterval(() => {
                         count++;
                         counter.innerText = count + (isPercent ? '%' : '+');
+
                         if (count >= target) clearInterval(update);
                     }, 20);
                 });
