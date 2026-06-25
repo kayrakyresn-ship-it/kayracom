@@ -28,15 +28,21 @@
         .stat-item h3 { font-size: 3.5rem; font-weight: 900; }
         .stat-item p { font-size: 1rem; color: #ccc; margin-top: 10px; }
 
-        /* Contact Section (Black Background) */
-        .contact-section { background: #000; color: #fff; padding: 100px 15%; text-align: center; }
-        .contact-section h2 { color: #fff; margin-bottom: 30px; }
-        .contact-info { font-size: 1.2rem; line-height: 2; margin-top: 20px; }
-
-        /* General Sections */
+        /* Sections */
         section { padding: 100px 15%; text-align: center; }
         h2 { font-size: 3.5rem; font-weight: 900; margin-bottom: 60px; text-transform: uppercase; }
-        .content-box { border: 2px solid #111; padding: 80px; }
+        .content-box { border: 2px solid #111; padding: 80px; max-width: 900px; margin: 0 auto; line-height: 1.8; }
+        
+        /* Contact Section */
+        .contact-section { background: #000; color: #fff; padding: 100px 15%; text-align: center; }
+        .contact-section h2 { color: #fff; }
+        .contact-info { font-size: 1.2rem; line-height: 2; margin-top: 20px; }
+
+        @media (max-width: 768px) {
+            .navbar { padding: 20px 5%; }
+            .nav-links { gap: 10px; font-size: 0.6rem; }
+            .stats-section { flex-direction: column; gap: 50px; }
+        }
     </style>
 </head>
 <body id="home">
@@ -59,31 +65,40 @@
 
     <section id="collection">
         <h2>COLLECTION</h2>
-        <div class="content-box"><h3>Excellence in Every Thread</h3><p>We transform raw materials into art.</p></div>
+        <div class="content-box">
+            <h3>Excellence in Every Thread</h3>
+            <p>Kayra Premium Collection is a reflection of our timeless aesthetic understanding. Each of our pieces has been brought to life by the perfect union of traditional craftsmanship and modern design. Every touch in our collection is not just an aesthetic concern, but a work of art that will allow you to step into an exclusive lifestyle. The meticulousness we show in selecting our raw materials, combined with 100% hand workmanship in the production process, results in an heirloom that will be cherished for generations.</p>
+        </div>
     </section>
 
     <section id="about">
         <h2>ABOUT US</h2>
-        <div class="content-box"><h3>A Vision Defined</h3><p>Kayra Premium represents a lifestyle.</p></div>
+        <div class="content-box">
+            <h3>A Vision Defined</h3>
+            <p>Kayra Premium is a visionary entity that defines luxury not just as a means of consumption, but as a stance and a form of expression. Our journey began with our passion for bringing together the most exclusive materials in the world, under the principle of 'pursuing the flawless'. Our years of experience have taught us that quality is hidden in the smallest detail. For us, a design is not just a job; it gains meaning the moment it reaches its owner. Under the roof of Kayra Premium, we work with a passionate family that is devoted to aesthetics, quality, and sustainability. With our global vision, we bring our borderless aesthetic understanding to an ever-expanding audience.</p>
+        </div>
     </section>
 
     <section id="privacy">
         <h2>PRIVACY</h2>
-        <div class="content-box"><h3>Your Trust</h3><p>Your data is our priority.</p></div>
+        <div class="content-box">
+            <h3>Your Trust</h3>
+            <p>At Kayra Premium, unconditional trust lies at the core of the relationship we build with our customers. Your privacy is our utmost priority. Your data security is treated with the same meticulous care we demonstrate in the craftsmanship of our products. Every piece of information you share is protected with top-tier encryption protocols to provide you with a more exclusive and personalized experience. We do not track your data, but rather the value and trust we offer you. In the world of Kayra Premium, the respect we hold for your personal space and data is an unchangeable characteristic of our brand.</p>
+        </div>
     </section>
 
     <section id="stats" class="stats-section">
         <div class="stat-item">
             <h3 class="counter" data-target="100">0%</h3>
-            <p>El İşçiliği</p>
+            <p>Handcrafting</p>
         </div>
         <div class="stat-item">
             <h3 class="counter" data-target="99">0%</h3>
-            <p>Müşteri Memnuniyeti</p>
+            <p>Satisfaction</p>
         </div>
         <div class="stat-item">
             <h3 class="counter" data-target="10">0+</h3>
-            <p>Global Varlık</p>
+            <p>Global Reach</p>
         </div>
     </section>
 
@@ -91,8 +106,8 @@
         <h2>CONTACT</h2>
         <div class="contact-info">
             <p>Email: kayrakyresn@gmail.com</p>
-            <p>Telefon: +90 507 761 38 38</p>
-            <p>Konum: İstanbul, Eyüp</p>
+            <p>Phone: +90 507 761 38 38</p>
+            <p>Location: Eyüp, Istanbul, Turkey</p>
         </div>
     </section>
 
