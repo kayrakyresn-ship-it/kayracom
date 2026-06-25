@@ -236,20 +236,102 @@
         }
 
         @media (max-width: 768px) {
-            .navbar { padding: 28px 7%; }
+    .navbar {
+        padding: 22px 6%;
+    }
 
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 88px;
-                left: 0;
-                width: 100%;
-                background: #fff;
-                text-align: center;
-                gap: 20px;
-                padding: 24px;
-            }
+    .logo {
+        font-size: 1rem;
+        letter-spacing: 3px;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        width: 100%;
+        background: #ffffff;
+        text-align: center;
+        gap: 18px;
+        padding: 22px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .hero {
+        min-height: 100vh;
+        padding: 0 6%;
+    }
+
+    .hero-title {
+        font-size: 3.2rem;
+        line-height: 1;
+        letter-spacing: -1px;
+    }
+
+    .hero-subtitle {
+        font-size: 0.72rem;
+        letter-spacing: 3px;
+        margin-top: 14px;
+        line-height: 1.5;
+    }
+
+    section {
+        padding: 85px 6%;
+    }
+
+    .text-section {
+        display: block;
+        text-align: left;
+    }
+
+    .section-label {
+        margin-bottom: 25px;
+        font-size: 0.85rem;
+    }
+
+    .big-text {
+        font-size: 1.38rem;
+        line-height: 1.35;
+        letter-spacing: -0.5px;
+        max-width: 100%;
+    }
+
+    .stats-section {
+        flex-direction: column;
+        gap: 42px;
+        padding: 85px 6%;
+    }
+
+    .stat-item h3 {
+        font-size: 3rem;
+    }
+
+    .stat-item p {
+        font-size: 0.9rem;
+    }
+
+    .contact-section {
+        padding: 85px 6%;
+    }
+
+    .contact-section h2 {
+        font-size: 2.7rem;
+    }
+
+    .contact-info {
+        font-size: 0.95rem;
+        line-height: 2;
+    }
+
 
             .nav-links.active { display: flex; }
             .menu-toggle { display: block; }
