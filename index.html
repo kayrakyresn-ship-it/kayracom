@@ -18,6 +18,9 @@
         .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 50%; width: 0; height: 2px; background-color: #111; transition: all 0.3s ease-out; transform: translateX(-50%); }
         .nav-links a:hover::after { width: 100%; }
 
+        /* Mobile Menu Toggle (Başlangıçta gizli) */
+        .menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; }
+
         /* Hero */
         .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
         .hero-title { font-size: 5rem; font-weight: 900; text-transform: uppercase; }
@@ -29,19 +32,22 @@
         .stat-item p { font-size: 1rem; color: #ccc; margin-top: 10px; }
 
         /* Sections */
-        section { padding: 100px 15%; text-align: center; }
-        h2 { font-size: 3.5rem; font-weight: 900; margin-bottom: 60px; text-transform: uppercase; }
-        .content-box { border: 2px solid #111; padding: 80px; max-width: 900px; margin: 0 auto; line-height: 1.8; }
-        
-        /* Contact Section */
-        .contact-section { background: #000; color: #fff; padding: 100px 15%; text-align: center; }
-        .contact-section h2 { color: #fff; }
-        .contact-info { font-size: 1.2rem; line-height: 2; margin-top: 20px; }
+        section { padding: 100px 10%; text-align: center; }
+        h2 { font-size: 3rem; font-weight: 900; margin-bottom: 40px; text-transform: uppercase; }
+        .content-box { border: 2px solid #111; padding: 50px; max-width: 800px; margin: 0 auto; line-height: 1.6; }
 
+        /* Contact */
+        .contact-section { background: #000; color: #fff; padding: 80px 10%; text-align: center; }
+        .contact-info { font-size: 1rem; line-height: 2; margin-top: 20px; }
+
+        /* Mobil Uyumlu Tasarım */
         @media (max-width: 768px) {
-            .navbar { padding: 20px 5%; }
-            .nav-links { gap: 10px; font-size: 0.6rem; }
-            .stats-section { flex-direction: column; gap: 50px; }
+            .nav-links { display: none; flex-direction: column; position: absolute; top: 100px; left: 0; width: 100%; background: #fff; text-align: center; gap: 20px; padding: 20px; }
+            .nav-links.active { display: flex; }
+            .menu-toggle { display: block; }
+            .hero-title { font-size: 3rem; }
+            .stats-section { flex-direction: column; gap: 40px; padding: 50px 5%; }
+            .content-box { padding: 30px; }
         }
     </style>
 </head>
@@ -49,7 +55,8 @@
 
     <nav class="navbar">
         <div class="logo">KAYRA <span>PREMIUM</span></div>
-        <ul class="nav-links">
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <ul class="nav-links" id="navLinks">
             <li><a href="#home">HOME</a></li>
             <li><a href="#collection">COLLECTION</a></li>
             <li><a href="#about">ABOUT</a></li>
@@ -67,7 +74,7 @@
         <h2>COLLECTION</h2>
         <div class="content-box">
             <h3>Excellence in Every Thread</h3>
-            <p>Kayra Premium Collection is a reflection of our timeless aesthetic understanding. Each of our pieces has been brought to life by the perfect union of traditional craftsmanship and modern design. Every touch in our collection is not just an aesthetic concern, but a work of art that will allow you to step into an exclusive lifestyle. The meticulousness we show in selecting our raw materials, combined with 100% hand workmanship in the production process, results in an heirloom that will be cherished for generations.</p>
+            <p>Kayra Premium Collection is a reflection of our timeless aesthetic understanding. Each of our pieces has been brought to life by the perfect union of traditional craftsmanship and modern design.</p>
         </div>
     </section>
 
@@ -75,7 +82,7 @@
         <h2>ABOUT US</h2>
         <div class="content-box">
             <h3>A Vision Defined</h3>
-            <p>Kayra Premium is a visionary entity that defines luxury not just as a means of consumption, but as a stance and a form of expression. Our journey began with our passion for bringing together the most exclusive materials in the world, under the principle of 'pursuing the flawless'. Our years of experience have taught us that quality is hidden in the smallest detail. For us, a design is not just a job; it gains meaning the moment it reaches its owner. Under the roof of Kayra Premium, we work with a passionate family that is devoted to aesthetics, quality, and sustainability. With our global vision, we bring our borderless aesthetic understanding to an ever-expanding audience.</p>
+            <p>Kayra Premium is a visionary entity that defines luxury not just as a means of consumption, but as a stance. We work with a passionate family that is devoted to aesthetics, quality, and sustainability.</p>
         </div>
     </section>
 
@@ -83,7 +90,7 @@
         <h2>PRIVACY</h2>
         <div class="content-box">
             <h3>Your Trust</h3>
-            <p>At Kayra Premium, unconditional trust lies at the core of the relationship we build with our customers. Your privacy is our utmost priority. Your data security is treated with the same meticulous care we demonstrate in the craftsmanship of our products. Every piece of information you share is protected with top-tier encryption protocols to provide you with a more exclusive and personalized experience. We do not track your data, but rather the value and trust we offer you. In the world of Kayra Premium, the respect we hold for your personal space and data is an unchangeable characteristic of our brand.</p>
+            <p>At Kayra Premium, unconditional trust lies at the core of the relationship we build with our customers. Your privacy is our utmost priority. Your data security is our responsibility.</p>
         </div>
     </section>
 
@@ -112,6 +119,10 @@
     </section>
 
     <script>
+        function toggleMenu() {
+            document.getElementById("navLinks").classList.toggle("active");
+        }
+
         const counters = document.querySelectorAll('.counter');
         let animated = false;
         window.addEventListener('scroll', () => {
