@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kayra Premium | The Purest Form of Luxury</title>
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
 
     <style>
@@ -11,45 +12,49 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            background-color: #f4f4f4;
+            background: #f4f4f4;
             color: #111;
             font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
         }
 
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 35px 8%;
+            padding: 32px 8%;
             position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
             z-index: 1000;
-            background: rgba(244, 244, 244, 0.92);
-            backdrop-filter: blur(12px);
+            background: rgba(244, 244, 244, 0.85);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
         }
 
         .logo {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 6px;
+            font-size: 1.4rem;
             font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 5px;
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 40px;
+            gap: 38px;
         }
 
         .nav-links a {
             text-decoration: none;
             color: #111;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             font-weight: 800;
             text-transform: uppercase;
             position: relative;
-            padding-bottom: 5px;
+            padding-bottom: 6px;
         }
 
         .nav-links a::after {
@@ -59,110 +64,143 @@
             left: 50%;
             width: 0;
             height: 2px;
-            background-color: #111;
-            transition: all 0.3s ease;
+            background: #111;
+            transition: 0.3s ease;
             transform: translateX(-50%);
         }
 
-        .nav-links a:hover::after {
-            width: 100%;
-        }
+        .nav-links a:hover::after { width: 100%; }
 
         .menu-toggle {
             display: none;
-            font-size: 1.5rem;
+            font-size: 1.7rem;
             cursor: pointer;
         }
 
         .hero {
             min-height: 100vh;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
+            padding: 0 8%;
         }
 
         .hero-title {
             font-family: 'Playfair Display', serif;
-            font-size: 6rem;
+            font-size: 6.5rem;
             font-weight: 900;
             text-transform: uppercase;
+            letter-spacing: -3px;
         }
 
         .hero-subtitle {
-            font-size: 1.1rem;
-            letter-spacing: 8px;
+            margin-top: 22px;
+            font-size: 1rem;
+            letter-spacing: 9px;
+            font-weight: 800;
             color: #555;
-            margin-top: 20px;
-            font-weight: 700;
         }
 
-        section {
-            padding: 120px 9%;
-        }
+        section { padding: 130px 9%; }
 
         .text-section {
             display: grid;
-            grid-template-columns: 250px 1fr;
-            gap: 120px;
+            grid-template-columns: 260px 1fr;
+            gap: 110px;
             align-items: start;
             text-align: left;
+            border-top: 1px solid rgba(0, 0, 0, 0.12);
         }
 
         .section-label {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             font-size: 1rem;
-            font-weight: 800;
+            font-weight: 900;
             color: #111;
-            padding-top: 12px;
+            padding-top: 10px;
+            text-transform: uppercase;
         }
 
         .section-label span {
-            width: 18px;
-            height: 18px;
+            width: 20px;
+            height: 20px;
             background: #000;
             color: #fff;
             border-radius: 50%;
             display: inline-flex;
             justify-content: center;
             align-items: center;
-            font-size: 14px;
+            font-size: 15px;
             font-weight: 900;
         }
 
         .big-text {
-            max-width: 850px;
-            font-size: 2.15rem;
+            max-width: 1000px;
+            font-size: 2.25rem;
             line-height: 1.18;
             font-weight: 800;
-            letter-spacing: -1.5px;
+            letter-spacing: -1.6px;
             color: #111;
         }
 
         .big-text .gray {
-            color: #6b6b6b;
+            color: #707070;
             font-weight: 700;
         }
 
         .big-text strong {
+            color: #000;
             font-weight: 900;
-            color: #111;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(90px);
+            transition: all 1s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-90px);
+            transition: all 1s ease;
+        }
+
+        .reveal-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(90px);
+            transition: all 1s ease;
+        }
+
+        .reveal-right.active {
+            opacity: 1;
+            transform: translateX(0);
         }
 
         .stats-section {
             display: flex;
             justify-content: space-around;
-            padding: 100px 15%;
+            gap: 40px;
+            padding: 110px 15%;
             background: #050505;
             color: #fff;
             text-align: center;
         }
 
         .stat-item h3 {
-            font-size: 3.5rem;
+            font-size: 3.8rem;
             font-weight: 900;
         }
 
@@ -170,68 +208,72 @@
             font-size: 1rem;
             color: #ccc;
             margin-top: 10px;
-            font-weight: 600;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .contact-section {
             background: #000;
             color: #fff;
-            padding: 90px 10%;
+            padding: 100px 10%;
             text-align: center;
         }
 
         .contact-section h2 {
             color: #fff;
             font-family: 'Playfair Display', serif;
-            font-size: 4.5rem;
+            font-size: 4.8rem;
             margin-bottom: 30px;
+            text-transform: uppercase;
         }
 
         .contact-info {
             font-size: 1.1rem;
-            line-height: 2;
+            line-height: 2.1;
             margin-top: 20px;
             font-weight: 600;
         }
 
         @media (max-width: 768px) {
+            .navbar { padding: 28px 7%; }
+
             .nav-links {
                 display: none;
                 flex-direction: column;
                 position: absolute;
-                top: 95px;
+                top: 88px;
                 left: 0;
                 width: 100%;
                 background: #fff;
                 text-align: center;
                 gap: 20px;
-                padding: 20px;
+                padding: 24px;
             }
 
-            .nav-links.active {
-                display: flex;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
+            .nav-links.active { display: flex; }
+            .menu-toggle { display: block; }
 
             .hero-title {
                 font-size: 3.2rem;
+                letter-spacing: -1px;
             }
 
             .hero-subtitle {
-                font-size: 0.8rem;
+                font-size: 0.78rem;
                 letter-spacing: 4px;
             }
 
+            section { padding: 95px 7%; }
+
             .text-section {
                 grid-template-columns: 1fr;
-                gap: 30px;
+                gap: 35px;
             }
 
             .big-text {
-                font-size: 1.7rem;
+                font-size: 1.62rem;
+                line-height: 1.25;
                 letter-spacing: -0.8px;
             }
 
@@ -240,9 +282,7 @@
                 gap: 45px;
             }
 
-            .contact-section h2 {
-                font-size: 2.8rem;
-            }
+            .contact-section h2 { font-size: 2.8rem; }
         }
     </style>
 </head>
@@ -252,6 +292,7 @@
     <nav class="navbar">
         <div class="logo">KAYRA <span>PREMIUM</span></div>
         <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
         <ul class="nav-links" id="navLinks">
             <li><a href="#home">HOME</a></li>
             <li><a href="#collection">COLLECTION</a></li>
@@ -262,71 +303,79 @@
     </nav>
 
     <main class="hero">
-        <h1 class="hero-title">PURE LUXURY</h1>
-        <p class="hero-subtitle">THE ART OF PERFECTION</p>
+        <div class="reveal">
+            <h1 class="hero-title">PURE LUXURY</h1>
+            <p class="hero-subtitle">THE ART OF PERFECTION</p>
+        </div>
     </main>
 
     <section id="collection" class="text-section">
-        <div class="section-label">
+        <div class="section-label reveal-left">
             <span>+</span>
             Collection
         </div>
 
-        <p class="big-text">
-            Kayra Premium Collection is designed for people who see fashion as more than clothing.
-            <span class="gray">Every piece is created with a focus on elegance, comfort, quality and long-lasting style.</span>
-            Our collection brings together modern lines, timeless details and a premium feeling that makes every product special.
-            <strong>We do not only create products; we create confidence, identity and a refined luxury experience.</strong>
+        <p class="big-text reveal-right">
+            Kayra Premium Collection is created for people who see fashion as more than a simple choice of clothing.
+            <span class="gray">Every piece is designed to carry elegance, comfort, quality and a timeless sense of identity.</span>
+            Our collection combines modern lines with classic luxury, carefully selected details and a clean visual language.
+            We focus on products that do not lose their value with temporary trends, but remain powerful, refined and meaningful over time.
+            <strong>Kayra Premium is not only about what you wear; it is about how confidently you present yourself to the world.</strong>
         </p>
     </section>
 
     <section id="about" class="text-section">
-        <div class="section-label">
+        <div class="section-label reveal-left">
             <span>+</span>
             About Us
         </div>
 
-        <p class="big-text">
-            Kayra Premium is a luxury-focused brand built on vision, detail and trust.
-            <span class="gray">Our aim is to create a strong brand identity that combines simplicity with power and elegance with purpose.</span>
-            We believe that true luxury should feel clean, meaningful and unforgettable.
-            Every design decision, every visual detail and every customer experience is shaped with care.
-            <strong>Kayra Premium represents a lifestyle for people who want to stand out with confidence and sophistication.</strong>
+        <p class="big-text reveal-right">
+            Kayra Premium was built with a clear vision: to present luxury in a simple, strong and unforgettable form.
+            <span class="gray">Our brand values detail, trust, creativity and elegance in every step.</span>
+            We believe that a premium brand should offer more than appearance; it should create a feeling, a lifestyle and a lasting connection.
+            Every design decision is shaped with care, from the typography and visual identity to the way customers experience the brand.
+            We aim to bring together simplicity and power, modern style and emotional value.
+            <strong>Kayra Premium represents a confident lifestyle for people who want to stand out with class, quality and sophistication.</strong>
         </p>
     </section>
 
     <section id="privacy" class="text-section">
-        <div class="section-label">
+        <div class="section-label reveal-left">
             <span>+</span>
             Privacy
         </div>
 
-        <p class="big-text">
-            At Kayra Premium, privacy is not just a rule; it is a part of the trust we build with our customers.
-            <span class="gray">We respect personal information and handle every detail with responsibility, care and transparency.</span>
-            Any information shared with us is used only to improve the customer experience and provide safer communication.
-            We believe that a premium brand must protect both quality and trust.
-            <strong>Your security, comfort and confidence are always among our highest priorities.</strong>
+        <p class="big-text reveal-right">
+            At Kayra Premium, privacy is not only a technical rule; it is a part of the respect we show to every customer.
+            <span class="gray">We care about personal information, communication safety and the trust placed in our brand.</span>
+            Any information shared with us is handled responsibly and used only to improve the customer experience, provide better service and create safer communication.
+            We believe that true luxury also means feeling protected, valued and respected.
+            A premium experience must be built on honesty, transparency and responsibility.
+            <strong>Your security, comfort and confidence will always remain among the most important values of Kayra Premium.</strong>
         </p>
     </section>
 
-    <section id="stats" class="stats-section">
+    <section id="stats" class="stats-section reveal">
         <div class="stat-item">
             <h3 class="counter" data-target="100">0%</h3>
             <p>Handcrafting</p>
         </div>
+
         <div class="stat-item">
             <h3 class="counter" data-target="99">0%</h3>
             <p>Satisfaction</p>
         </div>
+
         <div class="stat-item">
             <h3 class="counter" data-target="10">0+</h3>
             <p>Global Reach</p>
         </div>
     </section>
 
-    <section id="contact" class="contact-section">
+    <section id="contact" class="contact-section reveal">
         <h2>CONTACT</h2>
+
         <div class="contact-info">
             <p>Email: kayrakyresn@gmail.com</p>
             <p>Phone: +90 507 761 38 38</p>
@@ -342,7 +391,7 @@
         const counters = document.querySelectorAll('.counter');
         let animated = false;
 
-        window.addEventListener('scroll', () => {
+        function animateCounters() {
             const statsSection = document.getElementById('stats');
 
             if (statsSection.getBoundingClientRect().top < window.innerHeight && !animated) {
@@ -350,7 +399,7 @@
 
                 counters.forEach(counter => {
                     const target = +counter.getAttribute('data-target');
-                    const isPercent = counter.getAttribute('data-target') === '100' || counter.getAttribute('data-target') === '99';
+                    const isPercent = target === 100 || target === 99;
                     let count = 0;
 
                     const update = setInterval(() => {
@@ -361,6 +410,30 @@
                     }, 20);
                 });
             }
+        }
+
+        function revealOnScroll() {
+            const elements = document.querySelectorAll(".reveal, .reveal-left, .reveal-right");
+
+            elements.forEach((element) => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                const visiblePoint = 120;
+
+                if (elementTop < windowHeight - visiblePoint) {
+                    element.classList.add("active");
+                }
+            });
+        }
+
+        window.addEventListener("scroll", () => {
+            revealOnScroll();
+            animateCounters();
+        });
+
+        window.addEventListener("load", () => {
+            revealOnScroll();
+            animateCounters();
         });
     </script>
 
