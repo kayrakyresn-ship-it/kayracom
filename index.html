@@ -7,62 +7,44 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
     
     <style>
-        /* 1. Yumuşak kaydırma buraya eklendi */
         html { scroll-behavior: smooth; }
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { background-color: #ffffff; color: #111111; font-family: 'Playfair Display', serif; }
 
         /* Navbar */
         .navbar { display: flex; justify-content: space-between; align-items: center; padding: 40px 8%; position: fixed; width: 100%; z-index: 1000; background: #fff; }
         .logo { font-size: 1.5rem; text-transform: uppercase; letter-spacing: 6px; }
-        .logo span { font-weight: 700; }
         .nav-links { display: flex; list-style: none; gap: 40px; }
-        .nav-links a { text-decoration: none; color: #111; font-size: 0.9rem; font-weight: 700; text-transform: uppercase; position: relative; padding-bottom: 5px; }
-        .nav-links a::after { content: ''; position: absolute; width: 100%; transform: scaleX(0); height: 2px; bottom: 0; left: 0; background-color: #111; transition: transform 0.3s ease; }
-        .nav-links a:hover::after { transform: scaleX(1); }
+        .nav-links a { text-decoration: none; color: #111; font-size: 0.9rem; font-weight: 700; text-transform: uppercase; }
 
         /* Hero */
         .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
-        .hero-title { font-size: 5rem; font-weight: 900; text-transform: uppercase; margin-bottom: 20px; }
-        .hero-subtitle { font-size: 1.2rem; letter-spacing: 8px; text-transform: uppercase; color: #555; margin-bottom: 50px; }
+        .hero-title { font-size: 5rem; font-weight: 900; text-transform: uppercase; }
+        .hero-subtitle { font-size: 1.2rem; letter-spacing: 8px; color: #555; margin-top: 20px; }
 
-        /* Content */
-        section { padding: 150px 15%; text-align: center; }
-        h2 { font-size: 3.5rem; font-weight: 900; margin-bottom: 60px; text-transform: uppercase; }
-        .content-box { border: 2px solid #111; padding: 80px; }
-        .content-box h3 { font-size: 2.5rem; margin-bottom: 30px; }
-        .content-box p { font-size: 1.3rem; line-height: 1.8; color: #333; max-width: 800px; margin: 0 auto; }
+        /* İstatistik Bölümü (Yeni) */
+        .stats-section { display: flex; justify-content: space-around; padding: 100px 5%; background: #f9f9f9; text-align: center; }
+        .stat-item { flex: 1; padding: 20px; }
+        .stat-item h3 { font-size: 3rem; font-weight: 900; margin-bottom: 10px; }
+        .stat-item p { font-size: 0.9rem; color: #666; text-transform: uppercase; letter-spacing: 2px; }
 
-        /* Contact Style */
-        .contact-section { background-color: #050505; color: #ffffff; padding: 120px 15%; text-align: left; }
-        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
-        .contact-info h4 { color: #888; text-transform: uppercase; letter-spacing: 4px; font-size: 0.8rem; margin-bottom: 10px; }
-        .contact-info p { font-size: 1.4rem; margin-bottom: 30px; }
+        section { padding: 100px 15%; text-align: center; }
+        .content-box { border: 2px solid #111; padding: 60px; }
 
-        /* Mobil Responsive */
         @media (max-width: 768px) {
-            .navbar { padding: 20px 5%; flex-direction: column; gap: 15px; }
-            .nav-links { gap: 15px; font-size: 0.7rem; flex-wrap: wrap; justify-content: center; }
-            .hero-title { font-size: 2.5rem; }
-            .hero-subtitle { font-size: 0.9rem; letter-spacing: 4px; }
-            section { padding: 80px 5%; }
-            .content-box { padding: 30px 20px; }
-            h2 { font-size: 2rem; }
-            .contact-grid { grid-template-columns: 1fr; gap: 30px; text-align: center; }
+            .stats-section { flex-direction: column; gap: 40px; }
+            .hero-title { font-size: 3rem; }
         }
     </style>
 </head>
-<body>
+<body id="home">
 
     <nav class="navbar">
         <div class="logo">KAYRA <span>PREMIUM</span></div>
         <ul class="nav-links">
-            <li><a href="#">HOME</a></li>
-            <li><a href="#collection">COLLECTION</a></li>
-            <li><a href="#about">ABOUT US</a></li>
-            <li><a href="#privacy">PRIVACY</a></li>
-            <li><a href="#contact">CONTACT</a></li>
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#stats">STATS</a></li>
         </ul>
     </nav>
 
@@ -71,56 +53,58 @@
         <p class="hero-subtitle">THE ART OF PERFECTION</p>
     </main>
 
-    <section id="collection">
-        <h2>COLLECTION</h2>
-        <div class="content-box">
-            <h3>Excellence in Every Thread</h3>
-            <p>We transform the finest raw materials into artistic expressions. Each piece is a testament to our dedication to form, cut, and the silent language of luxury.</p>
-        </div>
-    </section>
-
     <section id="about">
         <h2>ABOUT US</h2>
         <div class="content-box">
             <h3>A Vision Defined</h3>
-            <p>Kayra Premium represents more than fashion; it represents a lifestyle. Our journey is rooted in timeless elegance, where every detail is meticulously considered.</p>
+            <p>Kayra Premium represents more than fashion; it represents a lifestyle.</p>
         </div>
     </section>
 
-    <section id="privacy">
-        <h2>PRIVACY & TERMS</h2>
-        <div class="content-box">
-            <h3>Your Trust, Our Priority</h3>
-            <p>We handle your data with the same integrity we bring to our craft. All interactions and transactions are strictly governed by our commitment to transparency.</p>
+    <section id="stats" class="stats-section">
+        <div class="stat-item">
+            <h3 class="counter" data-target="100">%100</h3>
+            <p>El İşçiliği</p>
+        </div>
+        <div class="stat-item">
+            <h3 class="counter" data-target="99">%99</h3>
+            <p>Müşteri Memnuniyeti</p>
+        </div>
+        <div class="stat-item">
+            <h3 class="counter" data-target="10">10+</h3>
+            <p>Global Varlık</p>
         </div>
     </section>
 
-    <section id="contact" class="contact-section">
-        <h2 style="color: #fff; text-align: center; margin-bottom: 80px;">CONTACT US</h2>
-        <div class="contact-grid">
-            <div class="contact-info">
-                <h4>Email</h4>
-                <p>kayrakyresn@gmail.com</p>
-                <h4>Phone</h4>
-                <p>+90 507 761 38 36</p>
-            </div>
-            <div class="contact-info">
-                <h4>Address</h4>
-                <p>Eyüp, Istanbul, Türkiye</p>
-                <h4>Availability</h4>
-                <p>24/7 Open</p>
-            </div>
-        </div>
-    </section>
-<script>
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
+    <script>
+        const counters = document.querySelectorAll('.counter');
+        let animated = false;
+
+        const animateCounters = () => {
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const updateCount = () => {
+                    const count = +counter.innerText.replace('%', '').replace('+', '');
+                    const increment = target / 50; 
+                    if(count < target) {
+                        counter.innerText = Math.ceil(count + increment) + (counter.getAttribute('data-target').includes('%') ? '%' : '+');
+                        setTimeout(updateCount, 30);
+                    } else {
+                        counter.innerText = target + (counter.getAttribute('data-target').includes('%') ? '%' : '+');
+                    }
+                };
+                updateCount();
             });
+        };
+
+        window.addEventListener('scroll', () => {
+            const statsSection = document.getElementById('stats');
+            const position = statsSection.getBoundingClientRect().top;
+            if(position < window.innerHeight && !animated) {
+                animateCounters();
+                animated = true;
+            }
         });
-    });
-</script>
+    </script>
 </body>
 </html>
