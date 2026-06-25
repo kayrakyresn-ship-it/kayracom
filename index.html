@@ -7,77 +7,89 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background: #fff; color: #111; font-family: 'Playfair Display', serif; }
+        body { background-color: #ffffff; color: #111111; font-family: 'Playfair Display', serif; }
 
         /* Navbar */
-        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 40px 8%; position: fixed; width: 100%; background: #fff; z-index: 1000; }
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 40px 8%; position: fixed; width: 100%; z-index: 1000; background: #fff; }
         .logo { font-size: 1.5rem; text-transform: uppercase; letter-spacing: 6px; cursor: pointer; }
         .nav-links { display: flex; list-style: none; gap: 40px; }
-        .nav-links a { text-decoration: none; color: #111; font-size: 0.9rem; font-weight: 700; text-transform: uppercase; cursor: pointer; transition: 0.3s; }
-        .nav-links a:hover { opacity: 0.6; }
+        .nav-links a { text-decoration: none; color: #111; font-size: 0.9rem; font-weight: 700; text-transform: uppercase; cursor: pointer; position: relative; padding-bottom: 5px; }
+        .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 50%; width: 0; height: 2px; background-color: #111; transition: all 0.3s ease-out; transform: translateX(-50%); }
+        .nav-links a:hover::after { width: 100%; }
 
-        /* Sayfa İçerik Yapısı */
-        .page { display: none; padding: 200px 10% 100px; text-align: center; }
-        .active { display: block; }
+        /* SADECE SEÇİLİ OLAN GÖRÜNSÜN MANTIĞI */
+        .content-page { display: none; padding: 200px 10%; text-align: center; }
+        .active-page { display: block; }
         
-        /* Başlık ve Yazı Stilleri */
-        h2 { font-size: 5rem; font-weight: 900; text-transform: uppercase; margin-bottom: 20px; }
-        h3 { font-size: 1.8rem; font-weight: 800; margin-bottom: 20px; }
-        p { font-size: 1.4rem; font-weight: 600; line-height: 1.6; max-width: 800px; margin: 0 auto; }
+        /* Başlıklar ve Metinler */
+        h2 { font-size: 4.5rem; font-weight: 900; margin-bottom: 30px; text-transform: uppercase; color: #000; }
+        .content-box { max-width: 800px; margin: 0 auto; line-height: 1.6; }
+        .content-box h3 { font-size: 1.8rem; margin-bottom: 15px; font-weight: 800; color: #000; }
+        .content-box p { font-size: 1.4rem; color: #111; font-weight: 600; }
 
         @media (max-width: 768px) {
-            .nav-links { gap: 15px; font-size: 0.7rem; }
-            h2 { font-size: 3rem; }
+            .nav-links { gap: 15px; }
+            h2 { font-size: 2.5rem; }
         }
     </style>
 </head>
 <body>
 
     <nav class="navbar">
-        <div class="logo" onclick="show('home')">KAYRA <span>PREMIUM</span></div>
+        <div class="logo" onclick="showPage('home')">KAYRA <span>PREMIUM</span></div>
         <ul class="nav-links">
-            <li><a onclick="show('home')">HOME</a></li>
-            <li><a onclick="show('collection')">COLLECTION</a></li>
-            <li><a onclick="show('about')">ABOUT</a></li>
-            <li><a onclick="show('privacy')">PRIVACY</a></li>
-            <li><a onclick="show('contact')">CONTACT</a></li>
+            <li><a onclick="showPage('home')">HOME</a></li>
+            <li><a onclick="showPage('collection')">COLLECTION</a></li>
+            <li><a onclick="showPage('about')">ABOUT</a></li>
+            <li><a onclick="showPage('privacy')">PRIVACY</a></li>
+            <li><a onclick="showPage('contact')">CONTACT</a></li>
         </ul>
     </nav>
 
-    <div id="home" class="page active">
+    <div id="home" class="content-page active-page">
         <h2>PURE LUXURY</h2>
         <p>THE ART OF PERFECTION</p>
     </div>
 
-    <div id="collection" class="page">
+    <div id="collection" class="content-page">
         <h2>COLLECTION</h2>
-        <h3>Excellence in Every Thread</h3>
-        <p>Kayra Premium Collection is a reflection of our timeless aesthetic understanding. Each of our pieces has been brought to life by the perfect union of traditional craftsmanship and modern design.</p>
+        <div class="content-box">
+            <h3>Excellence in Every Thread</h3>
+            <p>Kayra Premium Collection is a reflection of our timeless aesthetic understanding. Each of our pieces has been brought to life by the perfect union of traditional craftsmanship and modern design.</p>
+        </div>
     </div>
 
-    <div id="about" class="page">
+    <div id="about" class="content-page">
         <h2>ABOUT US</h2>
-        <h3>A Vision Defined</h3>
-        <p>Kayra Premium is a visionary entity that defines luxury not just as a means of consumption, but as a stance. We work with a passionate family that is devoted to aesthetics, quality, and sustainability.</p>
+        <div class="content-box">
+            <h3>A Vision Defined</h3>
+            <p>Kayra Premium is a visionary entity that defines luxury not just as a means of consumption, but as a stance. We work with a passionate family that is devoted to aesthetics, quality, and sustainability.</p>
+        </div>
     </div>
 
-    <div id="privacy" class="page">
+    <div id="privacy" class="content-page">
         <h2>PRIVACY</h2>
-        <h3>Your Trust</h3>
-        <p>At Kayra Premium, unconditional trust lies at the core of the relationship we build with our customers. Your privacy is our utmost priority. Your data security is our responsibility.</p>
+        <div class="content-box">
+            <h3>Your Trust</h3>
+            <p>At Kayra Premium, unconditional trust lies at the core of the relationship we build with our customers. Your privacy is our utmost priority. Your data security is our responsibility.</p>
+        </div>
     </div>
 
-    <div id="contact" class="page">
+    <div id="contact" class="content-page">
         <h2>CONTACT</h2>
-        <p>Email: kayrakyresn@gmail.com<br>Phone: +90 507 761 38 38<br>Location: Eyüp, Istanbul, Turkey</p>
+        <div class="content-box">
+            <p>Email: kayrakyresn@gmail.com<br>Phone: +90 507 761 38 38<br>Location: Eyüp, Istanbul, Turkey</p>
+        </div>
     </div>
 
     <script>
-        function show(id) {
+        function showPage(pageId) {
             // Tüm sayfaları gizle
-            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-            // Sadece tıklananı göster
-            document.getElementById(id).classList.add('active');
+            document.querySelectorAll('.content-page').forEach(page => {
+                page.classList.remove('active-page');
+            });
+            // Sadece seçileni göster
+            document.getElementById(pageId).classList.add('active-page');
         }
     </script>
 </body>
