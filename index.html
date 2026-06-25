@@ -242,6 +242,56 @@
             color: #777;
         }
 
+
+        .hero {
+            background:
+                linear-gradient(90deg, rgba(0,0,0,.76), rgba(0,0,0,.35), rgba(0,0,0,.08)),
+                url("kayra_assets_v2_3/hero.jpg") center center / cover no-repeat;
+            color: #fff;
+        }
+
+        .hero-subtitle {
+            color: #d6b16f;
+        }
+
+        .hero-note {
+            color: rgba(255,255,255,.82);
+        }
+
+        .visual-card {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            filter: saturate(.95) contrast(1.05);
+        }
+
+        .visual-card::after {
+            content: "";
+        }
+
+        #collection .visual-card {
+            background-image:
+                linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.32)),
+                url("kayra_assets_v2_3/collection.jpg");
+        }
+
+        #about .visual-card {
+            background-image:
+                linear-gradient(180deg, rgba(0,0,0,.05), rgba(0,0,0,.28)),
+                url("kayra_assets_v2_3/about.jpg");
+        }
+
+        #privacy .visual-card {
+            background-image:
+                linear-gradient(180deg, rgba(0,0,0,.03), rgba(0,0,0,.30)),
+                url("kayra_assets_v2_3/privacy.jpg");
+        }
+
+        .visual-card:hover {
+            transform: translateY(-8px) scale(1.015);
+            transition: transform .45s ease;
+        }
+
         .stats-section {
             display: flex;
             justify-content: space-around;
