@@ -22,19 +22,13 @@
         .hero-title { font-size: 5rem; font-weight: 900; text-transform: uppercase; }
         .hero-subtitle { font-size: 1.2rem; letter-spacing: 8px; color: #555; margin-top: 20px; }
 
-        /* İstatistik Bölümü (Yeni) */
-        .stats-section { display: flex; justify-content: space-around; padding: 100px 5%; background: #f9f9f9; text-align: center; }
-        .stat-item { flex: 1; padding: 20px; }
-        .stat-item h3 { font-size: 3rem; font-weight: 900; margin-bottom: 10px; }
-        .stat-item p { font-size: 0.9rem; color: #666; text-transform: uppercase; letter-spacing: 2px; }
+        /* Stats */
+        .stats-section { display: flex; justify-content: space-around; padding: 100px 15%; background: #050505; color: #fff; text-align: center; }
+        .stat-item h3 { font-size: 3.5rem; font-weight: 900; }
+        .stat-item p { font-size: 1rem; color: #ccc; margin-top: 10px; }
 
-        section { padding: 100px 15%; text-align: center; }
-        .content-box { border: 2px solid #111; padding: 60px; }
-
-        @media (max-width: 768px) {
-            .stats-section { flex-direction: column; gap: 40px; }
-            .hero-title { font-size: 3rem; }
-        }
+        section { padding: 150px 15%; text-align: center; }
+        .content-box { border: 2px solid #111; padding: 80px; }
     </style>
 </head>
 <body id="home">
@@ -43,7 +37,6 @@
         <div class="logo">KAYRA <span>PREMIUM</span></div>
         <ul class="nav-links">
             <li><a href="#home">HOME</a></li>
-            <li><a href="#about">ABOUT</a></li>
             <li><a href="#stats">STATS</a></li>
         </ul>
     </nav>
@@ -53,25 +46,17 @@
         <p class="hero-subtitle">THE ART OF PERFECTION</p>
     </main>
 
-    <section id="about">
-        <h2>ABOUT US</h2>
-        <div class="content-box">
-            <h3>A Vision Defined</h3>
-            <p>Kayra Premium represents more than fashion; it represents a lifestyle.</p>
-        </div>
-    </section>
-
     <section id="stats" class="stats-section">
         <div class="stat-item">
-            <h3 class="counter" data-target="100">%100</h3>
+            <h3 class="counter" data-target="100">0%</h3>
             <p>El İşçiliği</p>
         </div>
         <div class="stat-item">
-            <h3 class="counter" data-target="99">%99</h3>
+            <h3 class="counter" data-target="99">0%</h3>
             <p>Müşteri Memnuniyeti</p>
         </div>
         <div class="stat-item">
-            <h3 class="counter" data-target="10">10+</h3>
+            <h3 class="counter" data-target="10">0+</h3>
             <p>Global Varlık</p>
         </div>
     </section>
@@ -80,29 +65,25 @@
         const counters = document.querySelectorAll('.counter');
         let animated = false;
 
-        const animateCounters = () => {
-            counters.forEach(counter => {
-                const target = +counter.getAttribute('data-target');
-                const updateCount = () => {
-                    const count = +counter.innerText.replace('%', '').replace('+', '');
-                    const increment = target / 50; 
-                    if(count < target) {
-                        counter.innerText = Math.ceil(count + increment) + (counter.getAttribute('data-target').includes('%') ? '%' : '+');
-                        setTimeout(updateCount, 30);
-                    } else {
-                        counter.innerText = target + (counter.getAttribute('data-target').includes('%') ? '%' : '+');
-                    }
-                };
-                updateCount();
-            });
-        };
-
         window.addEventListener('scroll', () => {
             const statsSection = document.getElementById('stats');
-            const position = statsSection.getBoundingClientRect().top;
-            if(position < window.innerHeight && !animated) {
-                animateCounters();
+            const sectionTop = statsSection.getBoundingClientRect().top;
+            
+            if (sectionTop < window.innerHeight && !animated) {
                 animated = true;
+                counters.forEach(counter => {
+                    const target = +counter.getAttribute('data-target');
+                    const isPercent = counter.getAttribute('data-target') === '100' || counter.getAttribute('data-target') === '99';
+                    let count = 0;
+                    const duration = 2000;
+                    const interval = duration / target;
+                    
+                    const update = setInterval(() => {
+                        count++;
+                        counter.innerText = count + (isPercent ? '%' : '+');
+                        if (count >= target) clearInterval(update);
+                    }, interval);
+                });
             }
         });
     </script>
