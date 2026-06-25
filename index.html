@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kayra Premium | The Purest Form of Luxury</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
-    
     <style>
         html { scroll-behavior: smooth; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -22,13 +21,21 @@
         .hero-title { font-size: 5rem; font-weight: 900; text-transform: uppercase; }
         .hero-subtitle { font-size: 1.2rem; letter-spacing: 8px; color: #555; margin-top: 20px; }
 
-        /* Stats */
+        /* Stats Section */
         .stats-section { display: flex; justify-content: space-around; padding: 100px 15%; background: #050505; color: #fff; text-align: center; }
         .stat-item h3 { font-size: 3.5rem; font-weight: 900; }
         .stat-item p { font-size: 1rem; color: #ccc; margin-top: 10px; }
 
+        /* Sections */
         section { padding: 150px 15%; text-align: center; }
+        h2 { font-size: 3.5rem; font-weight: 900; margin-bottom: 60px; text-transform: uppercase; }
         .content-box { border: 2px solid #111; padding: 80px; }
+        
+        @media (max-width: 768px) {
+            .navbar { padding: 20px 5%; }
+            .nav-links { gap: 10px; font-size: 0.6rem; }
+            .stats-section { flex-direction: column; gap: 50px; }
+        }
     </style>
 </head>
 <body id="home">
@@ -37,7 +44,11 @@
         <div class="logo">KAYRA <span>PREMIUM</span></div>
         <ul class="nav-links">
             <li><a href="#home">HOME</a></li>
+            <li><a href="#collection">COLLECTION</a></li>
+            <li><a href="#about">ABOUT</a></li>
             <li><a href="#stats">STATS</a></li>
+            <li><a href="#privacy">PRIVACY</a></li>
+            <li><a href="#contact">CONTACT</a></li>
         </ul>
     </nav>
 
@@ -45,6 +56,16 @@
         <h1 class="hero-title">PURE LUXURY</h1>
         <p class="hero-subtitle">THE ART OF PERFECTION</p>
     </main>
+
+    <section id="collection">
+        <h2>COLLECTION</h2>
+        <div class="content-box"><h3>Excellence in Every Thread</h3><p>We transform raw materials into art.</p></div>
+    </section>
+
+    <section id="about">
+        <h2>ABOUT US</h2>
+        <div class="content-box"><h3>A Vision Defined</h3><p>Kayra Premium represents a lifestyle.</p></div>
+    </section>
 
     <section id="stats" class="stats-section">
         <div class="stat-item">
@@ -61,28 +82,32 @@
         </div>
     </section>
 
+    <section id="privacy">
+        <h2>PRIVACY</h2>
+        <div class="content-box"><h3>Your Trust</h3><p>Your data is our priority.</p></div>
+    </section>
+
+    <section id="contact">
+        <h2>CONTACT</h2>
+        <div class="content-box"><h3>Let's Talk</h3><p>kayrakyresn@gmail.com</p></div>
+    </section>
+
     <script>
         const counters = document.querySelectorAll('.counter');
         let animated = false;
-
         window.addEventListener('scroll', () => {
             const statsSection = document.getElementById('stats');
-            const sectionTop = statsSection.getBoundingClientRect().top;
-            
-            if (sectionTop < window.innerHeight && !animated) {
+            if (statsSection.getBoundingClientRect().top < window.innerHeight && !animated) {
                 animated = true;
                 counters.forEach(counter => {
                     const target = +counter.getAttribute('data-target');
                     const isPercent = counter.getAttribute('data-target') === '100' || counter.getAttribute('data-target') === '99';
                     let count = 0;
-                    const duration = 2000;
-                    const interval = duration / target;
-                    
                     const update = setInterval(() => {
                         count++;
                         counter.innerText = count + (isPercent ? '%' : '+');
                         if (count >= target) clearInterval(update);
-                    }, interval);
+                    }, 20);
                 });
             }
         });
