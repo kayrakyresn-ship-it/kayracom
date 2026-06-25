@@ -6,71 +6,56 @@
     <title>Kayra Premium | The Purest Form of Luxury</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        html { scroll-behavior: smooth; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { background-color: #ffffff; color: #111111; font-family: 'Playfair Display', serif; }
 
-        /* Navbar (Değişmedi) */
+        /* Navbar */
         .navbar { display: flex; justify-content: space-between; align-items: center; padding: 40px 8%; position: fixed; width: 100%; z-index: 1000; background: #fff; }
-        .logo { font-size: 1.5rem; text-transform: uppercase; letter-spacing: 6px; }
+        .logo { font-size: 1.5rem; text-transform: uppercase; letter-spacing: 6px; cursor: pointer; }
         .nav-links { display: flex; list-style: none; gap: 40px; }
-        .nav-links a { text-decoration: none; color: #111; font-size: 0.9rem; font-weight: 700; text-transform: uppercase; position: relative; padding-bottom: 5px; }
+        .nav-links a { text-decoration: none; color: #111; font-size: 0.9rem; font-weight: 700; text-transform: uppercase; cursor: pointer; position: relative; padding-bottom: 5px; }
         .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 50%; width: 0; height: 2px; background-color: #111; transition: all 0.3s ease-out; transform: translateX(-50%); }
         .nav-links a:hover::after { width: 100%; }
-        .menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; }
+
+        /* Bölüm Gizleme Mantığı */
+        .page-section { display: none; padding: 150px 10%; text-align: center; }
+        .active-section { display: block; }
 
         /* Hero */
         .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
         .hero-title { font-size: 5rem; font-weight: 900; text-transform: uppercase; }
         .hero-subtitle { font-size: 1.2rem; letter-spacing: 8px; color: #555; margin-top: 20px; }
 
-        /* Content Sections */
-        section { padding: 100px 10%; text-align: center; }
-        
-        /* Başlıklar */
-        h2 { font-size: 4.5rem; font-weight: 900; margin-bottom: 30px; text-transform: uppercase; color: #000; }
-        
-        /* Metinler (Kalınlaştırıldı ve Büyütüldü) */
+        /* İçerik */
+        h2 { font-size: 4.5rem; font-weight: 900; margin-bottom: 30px; text-transform: uppercase; }
         .content-box { max-width: 800px; margin: 0 auto; line-height: 1.6; }
-        .content-box h3 { font-size: 1.8rem; margin-bottom: 15px; font-weight: 800; color: #000; }
-        .content-box p { font-size: 1.4rem; color: #111; font-weight: 600; }
-
-        /* Stats & Contact (Aynı kaldı) */
-        .stats-section { display: flex; justify-content: space-around; padding: 100px 15%; background: #050505; color: #fff; text-align: center; }
-        .stat-item h3 { font-size: 3.5rem; font-weight: 900; }
-        .stat-item p { font-size: 1rem; color: #ccc; margin-top: 10px; }
-        .contact-section { background: #000; color: #fff; padding: 80px 10%; text-align: center; }
-        .contact-info { font-size: 1rem; line-height: 2; margin-top: 20px; }
+        .content-box h3 { font-size: 1.8rem; margin-bottom: 15px; font-weight: 800; }
+        .content-box p { font-size: 1.4rem; font-weight: 600; }
 
         @media (max-width: 768px) {
-            .nav-links { display: none; flex-direction: column; position: absolute; top: 100px; left: 0; width: 100%; background: #fff; text-align: center; gap: 20px; padding: 20px; }
-            .nav-links.active { display: flex; }
-            .menu-toggle { display: block; }
             h2 { font-size: 2.5rem; }
-            .content-box p { font-size: 1.1rem; }
         }
     </style>
 </head>
-<body id="home">
+<body>
 
     <nav class="navbar">
-        <div class="logo">KAYRA <span>PREMIUM</span></div>
-        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-        <ul class="nav-links" id="navLinks">
-            <li><a href="#home">HOME</a></li>
-            <li><a href="#collection">COLLECTION</a></li>
-            <li><a href="#about">ABOUT</a></li>
-            <li><a href="#privacy">PRIVACY</a></li>
-            <li><a href="#contact">CONTACT</a></li>
+        <div class="logo" onclick="showSection('home')">KAYRA <span>PREMIUM</span></div>
+        <ul class="nav-links">
+            <li><a onclick="showSection('home')">HOME</a></li>
+            <li><a onclick="showSection('collection')">COLLECTION</a></li>
+            <li><a onclick="showSection('about')">ABOUT</a></li>
+            <li><a onclick="showSection('privacy')">PRIVACY</a></li>
+            <li><a onclick="showSection('contact')">CONTACT</a></li>
         </ul>
     </nav>
 
-    <main class="hero">
+    <main id="home" class="page-section active-section hero">
         <h1 class="hero-title">PURE LUXURY</h1>
         <p class="hero-subtitle">THE ART OF PERFECTION</p>
     </main>
 
-    <section id="collection">
+    <section id="collection" class="page-section">
         <h2>COLLECTION</h2>
         <div class="content-box">
             <h3>Excellence in Every Thread</h3>
@@ -78,7 +63,7 @@
         </div>
     </section>
 
-    <section id="about">
+    <section id="about" class="page-section">
         <h2>ABOUT US</h2>
         <div class="content-box">
             <h3>A Vision Defined</h3>
@@ -86,7 +71,7 @@
         </div>
     </section>
 
-    <section id="privacy">
+    <section id="privacy" class="page-section">
         <h2>PRIVACY</h2>
         <div class="content-box">
             <h3>Your Trust</h3>
@@ -94,52 +79,22 @@
         </div>
     </section>
 
-    <section id="stats" class="stats-section">
-        <div class="stat-item">
-            <h3 class="counter" data-target="100">0%</h3>
-            <p>Handcrafting</p>
-        </div>
-        <div class="stat-item">
-            <h3 class="counter" data-target="99">0%</h3>
-            <p>Satisfaction</p>
-        </div>
-        <div class="stat-item">
-            <h3 class="counter" data-target="10">0+</h3>
-            <p>Global Reach</p>
-        </div>
-    </section>
-
-    <section id="contact" class="contact-section">
+    <section id="contact" class="page-section">
         <h2>CONTACT</h2>
-        <div class="contact-info">
-            <p>Email: kayrakyresn@gmail.com</p>
-            <p>Phone: +90 507 761 38 38</p>
-            <p>Location: Eyüp, Istanbul, Turkey</p>
+        <div class="content-box">
+            <p>Email: kayrakyresn@gmail.com<br>Phone: +90 507 761 38 38<br>Location: Eyüp, Istanbul, Turkey</p>
         </div>
     </section>
 
     <script>
-        function toggleMenu() {
-            document.getElementById("navLinks").classList.toggle("active");
+        function showSection(sectionId) {
+            // Tüm bölümleri gizle
+            document.querySelectorAll('.page-section').forEach(section => {
+                section.classList.remove('active-section');
+            });
+            // Sadece seçileni göster
+            document.getElementById(sectionId).classList.add('active-section');
         }
-        const counters = document.querySelectorAll('.counter');
-        let animated = false;
-        window.addEventListener('scroll', () => {
-            const statsSection = document.getElementById('stats');
-            if (statsSection.getBoundingClientRect().top < window.innerHeight && !animated) {
-                animated = true;
-                counters.forEach(counter => {
-                    const target = +counter.getAttribute('data-target');
-                    const isPercent = counter.getAttribute('data-target') === '100' || counter.getAttribute('data-target') === '99';
-                    let count = 0;
-                    const update = setInterval(() => {
-                        count++;
-                        counter.innerText = count + (isPercent ? '%' : '+');
-                        if (count >= target) clearInterval(update);
-                    }, 20);
-                });
-            }
-        });
     </script>
 </body>
 </html>
