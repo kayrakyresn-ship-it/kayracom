@@ -155,39 +155,13 @@
             color: #000;
             font-weight: 900;
         }
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(90px);
-            transition: all 1s ease;
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .reveal-left {
-            opacity: 0;
-            transform: translateX(-90px);
-            transition: all 1s ease;
-        }
-
-        .reveal-left.active {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
+        .reveal,
+        .reveal-left,
         .reveal-right {
-            opacity: 0;
-            transform: translateX(90px);
-            transition: all 1s ease;
+            opacity: 1;
+            transform: none;
         }
 
-        .reveal-right.active {
-            opacity: 1;
-            transform: translateX(0);
-        }
 
         .stats-section {
             display: flex;
@@ -443,17 +417,7 @@
         }
 
         function revealOnScroll() {
-            const elements = document.querySelectorAll(".reveal, .reveal-left, .reveal-right");
-
-            elements.forEach((element) => {
-                const windowHeight = window.innerHeight;
-                const elementTop = element.getBoundingClientRect().top;
-                const visiblePoint = 120;
-
-                if (elementTop < windowHeight - visiblePoint) {
-                    element.classList.add("active");
-                }
-            });
+            // Animasyonları GSAP yaptığı için burada ekstra işlem yok.
         }
 
         window.addEventListener("scroll", () => {
@@ -481,28 +445,32 @@ gsap.from(".hero-subtitle",{
 
 gsap.utils.toArray(".text-section").forEach((section)=>{
 
-    gsap.from(section,{
+    const label = section.querySelector(".section-label");
+    const text = section.querySelector(".big-text");
 
-        y:-180,
-
+    gsap.from(label,{
+        y:-90,
         opacity:0,
-
-        duration:1.5,
-
+        duration:1.1,
         ease:"power4.out",
-
         scrollTrigger:{
-
             trigger:section,
-
-            start:"top 80%",
-
-            end:"bottom 70%",
-
+            start:"top 82%",
             toggleActions:"play none none reverse"
-
         }
+    });
 
+    gsap.from(text,{
+        y:-120,
+        opacity:0,
+        duration:1.4,
+        delay:.12,
+        ease:"power4.out",
+        scrollTrigger:{
+            trigger:section,
+            start:"top 82%",
+            toggleActions:"play none none reverse"
+        }
     });
 
 });
